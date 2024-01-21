@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}Paste Bin{% endblock %}
+
+{% block content %}
+    <h1 align="center">Paste Bin</h1>
+
+    <!-- Container for text boxes -->
+    <div id="text-box-container" class="mt-4">
+        <!-- Initial text box -->
+        <div class="text-box mb-4">
+            <div class="text-box-content">
+                <div class="textarea-container">
+                    <textarea class="form-control" rows="8" placeholder="Enter text"></textarea>
+                    <span class="btn btn-danger ml-2 delete-button" onclick="deleteTextBox(this)">X</span>
+                </div>
+                <div class="text-box-buttons">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="selectedLanguage">Select Language</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'python')">Python</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'c_java')">C/Java</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'asm')">ASM</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary ml-2" onclick="formatText(this)">Format</button>
+                    <button class="btn btn-success ml-2" onclick="copyToClipboard(this)">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button to add a new text box -->
+    <button class="btn btn-primary" onclick="addNewTextBox()">Add New Text Box</button>
+
+    <style>
+        .text-box {
+            position: relative;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .text-box-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .textarea-container {
+            position: relative;
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 3px 6px;
+            cursor: pointer;
+        }
+
+        .text-box-buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        var selectedLanguages = {}; // Store selected languages for each text box
+
+        function addNewTextBox() {
+            var textBoxContainer = document.getElementById('text-box-container');
+
+            var newTextBox = document.createElement('div');
+            newTextBox.className = 'text-box mb-4';
+            newTextBox.innerHTML = `
+                <div class="text-box-content">
+                    <textarea class="form-control" rows="8" placeholder="Enter text"></textarea>
+                    <div class="text-box-buttons">
+                        <button class="btn btn-success ml-2" onclick="copyToClipboard(this)"><i class="fa fa-clipboard"></i>Copy</button>
+                        <button class="btn btn-warning ml-2" onclick="makeLowerCase(this)"><i class="fa fa-font"></i>Lower Case</button>
+                        <button class="btn btn-info ml-2" onclick="removeWhitespace(this)"><i class="fa fa-magic"></i>White Space</button>
+                        <button class="btn btn-dark ml-2" onclick="spellCheck(this)"><i class="fa fa-check-circle-o"></i>Auto-Correct</button>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="selectedLanguage">Select Language</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'python')">Python</a>
+                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'c_java')">C/Java</a>
+                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'asm')">ASM</a>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary ml-2" onclick="formatText(this)"><i class="fa fa-align-left"></i>Format</button> 
+                        <span class="btn btn-danger ml-2 delete-button" onclick="deleteTextBox(this)">X</span>
+                    </div>
+                </div>
+            `;
+
+            textBoxContainer.appendChild(newTextBox);
+        }
+
+        function changeLanguage(element, language) {
+            var textBox = element.closest('.text-box');
+            selectedLanguages[textBox] = language;
+            textBox.querySelector('.selectedLanguage').innerText = language.charAt(0).toUpperCase() + language.slice(1);
+        }
+
+        function makeLowerCase(button) {
+            var textBox = button.closest('.text-box').querySelector('textarea');
+            textBox.value = textBox.value.toLowerCase();
+        }
+
+        function formatText(button) {
+            var textBox = button.closest('.text-box').querySelector('textarea');
+            var selectedLanguage = selectedLanguages[button.closest('.text-box')];
+
+            // Send data to the Flask server
+            fetch('/format_text', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 'text': textBox.value, 'language': selectedLanguage }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the text area with the formatted text received from the server
+                textBox.value = data.formatted_text;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function removeWhitespace(button) {
+            var textBox = button.closest('.text-box').querySelector('textarea');
+            textBox.value = textBox.value.replace(/\s+/g, ''); // Removes all whitespace
+        }
+
+        function spellCheck(button) {
+            var textBox = button.closest('.text-box').querySelector('textarea');
+            var selectedLanguage = selectedLanguages[button.closest('.text-box')];
+
+            // Send data to the Flask server
+            fetch('/spell_Check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 'text': textBox.value}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the text area with the formatted text received from the server
+                textBox.value = data.formatted_text;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+
+        function copyToClipboard(button) {
+            var textBox = button.closest('.text-box').querySelector('textarea');
+            textBox.select();
+            document.execCommand('copy');
+        }
+
+        function deleteTextBox(button) {
+            var textBox = button.closest('.text-box');
+            textBox.remove();
+        }
+    </script>
+{% endblock %}
+

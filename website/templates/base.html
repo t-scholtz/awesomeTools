@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/prettier/2.5.1/browser-prettier.js"></script>
+
+    <!-- Your custom styles -->
+    <style>
+        /* Centered and Longer Search Bar */
+        .custom-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-form input {
+            width: 300px; /* Adjust the width as needed */
+        }
+
+        /* Extended Sidebar with Icons */
+        .sidebar {
+            background-color: #222222; /* Adjust background color as needed */
+            color: #F3EFE0; /* Adjust text color as needed */
+            height: 100vh; /* Extend sidebar to the full height of the viewport */
+        }
+
+        .navbar {
+            background-color: #22A39F; /* Change this to the desired background color */
+            color: #F3EFE0; /* Adjust text color as needed */
+        }
+
+        .navbar-brand {
+            color: #F3EFE0 !important; /* Change text color to white */
+        }
+
+        .nav-link {
+            color: #F3EFE0; /* Adjust link color as needed */
+        }
+
+        .nav-link i {
+            margin-right: 8px; /* Adjust spacing between icon and text */
+        }
+
+        .nav-link:hover {
+            background-color: #434242; /* Adjust hover background color as needed */
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar sticky-top flex-md-nowrap">
+        <div class="col-md-3 col-lg-3 me-0 px-3 fs-6">
+            <a class="navbar-brand" href="/">
+                <i class="fa fa-wrench"></i>  Awesome Tools
+            </a>
+        </div>
+
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <form class="custom-form header-form ms-lg-3 ms-md-3 me-lg-auto me-md-auto order-2 order-lg-0 order-md-0" action="#" method="get" role="form">
+            <input class="form-control" name="search" type="text" placeholder="Search" aria-label="Search">
+        </form>
+
+        <div class="navbar-nav me-lg-2">
+            <!-- Add your notifications and profile dropdown here if needed -->
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block sidebar collapse">
+                <div class="position-sticky py-4 px-3 sidebar-sticky">
+                    <ul class="nav flex-column h-100">
+                        <!-- Add your sidebar navigation items with icons here -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pasteBin">
+                                <i class="fa fa-paste"></i> Paste Bin
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/images">
+                                <i class="fa fa-image"></i> Images
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">
+                                <i class="fa fa-info-circle"></i> About
+                            </a>
+                        </li>
+                        <!-- Add any additional sidebar items here -->
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
+                <!-- Content Goes Here -->
+                <div class="container">
+                    {% block content %} {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap and JavaScript Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

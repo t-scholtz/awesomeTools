@@ -1,2 +1,44 @@
-# awesomeTools
-A web app that offers several small but useful fucntions such as file conversions and textformatting
+# Awsome Tools
+
+## Projects notes
+
+### Themes
+Colours Being used
+
+#F3EFE0 - Background
+#434242- base
+#222222-  low light
+#22A39F -   hilight
+
+## Libaries require
+
+npm install --save-dev prettier
+pip install flask
+pip install flask-sqlalchemy
+pip install pyspellchecker
+
+
+
+# Flask Web App Tutorial
+
+## Setup & Installation
+
+Make sure you have the latest version of Python installed.
+
+```bash
+git clone <repo-url>
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running The App
+
+```bash
+python main.py
+```
+
+## Viewing The App
+
+Go to `http://127.0.0.1:5000`
