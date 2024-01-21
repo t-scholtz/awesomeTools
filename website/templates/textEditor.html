@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Text Editor{% endblock %} 
+    {% block content %}
+    <h1 align="center">Text Editor</h1>
+
+    <!-- Create a container for the text editor -->
+    <div id="editor-container">
+      <!-- Text area for user input -->
+      <textarea id="editor-input" oninput="renderMarkdown()"></textarea>
+      <!-- Rendered Markdown output -->
+      <div id="markdown-output"></div>
+  </div>
+
+  <script >
+
+function renderMarkdown() {
+    const userInput = document.getElementById('editor-input').value;
+    
+    // Use the Markdown library to convert user input to HTML
+    const markdownOutput = marked(userInput);
+
+    // Display the rendered Markdown in the output div
+    document.getElementById('markdown-output').innerHTML = markdownOutput;
+
+    // You can add additional functionalities here, like spell checking and underlining misspelled words
+}
+
+  </script>
+{% endblock %}
+
+    

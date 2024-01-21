@@ -8,6 +8,10 @@ import subprocess
 pasteBin = Blueprint('pasteBin', __name__)
 
 
+@pasteBin.route('/pasteBin', methods=['GET', 'POST'])
+def pasteBinPage():
+    return render_template("pasteBin.html")
+
 @pasteBin.route('/format_text', methods=['POST'])
 def format_text():
     print("formate called")

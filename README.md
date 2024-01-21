@@ -16,7 +16,8 @@ npm install --save-dev prettier
 pip install flask
 pip install flask-sqlalchemy
 pip install pyspellchecker
-
+pip install flask_wtf
+pip install wtforms
 
 
 # Flask Web App Tutorial
