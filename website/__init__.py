@@ -4,13 +4,9 @@ from os import PathLike
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
-app_instance = None 
+
 
 def create_app():
-
-    global app_instance
-    if app_instance is not None:
-        return app_instance 
     
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
@@ -31,7 +27,6 @@ def create_app():
     
     with app.app_context():
         db.create_all()
-
     return app
 
 
@@ -39,3 +34,5 @@ def create_database(app):
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
+
+

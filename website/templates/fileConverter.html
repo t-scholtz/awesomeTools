@@ -1,22 +1,31 @@
-{% extends "base.html" %} 
-{% block title %}File Converter{% endblock %} 
-{% block content%}
-    
-    <h1 align="center">File Converter</h1>
-        
-    <form method='POST' enctype='multipart/form-data'>
-        {{form.hidden_tag()}}
-        {{form.file()}}
-        {{form.submit()}}
+{% extends "base.html" %}
+{% block title %}File Converter{% endblock %}
+{% block content %}
+
+<h1 align="center">File Converter</h1>
+
+<form method='POST' enctype='multipart/form-data'>
+    {{ form.hidden_tag() }}
+    {{ form.file() }}
+    {{ form.submit() }}
+</form>
+
+{% if conversion_form.conversion.choices %}
+    <form method='POST'>
+        {{ conversion_form.csrf_token }}
+        {{ conversion_form.conversion() }}
+        {{ conversion_form.submit_conversion() }}
     </form>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class=flashes>
+{% endif %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
             {% for message in messages %}
                 <li>{{ message }}</li>
             {% endfor %}
-            </ul>
-        {% endif %}
-        {% endwith %}
-    
-    {% endblock %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

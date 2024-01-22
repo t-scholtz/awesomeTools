@@ -72,7 +72,7 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'python')">Python</a>
                                 <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'c_java')">C/Java</a>
-                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'asm')">ASM</a>
+                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'gen')">Genreal Text</a>
                             </div>
                         </div>
                         <button class="btn btn-primary ml-2" onclick="formatText(this)"><i class="fa fa-align-left"></i> Format</button> 
@@ -89,6 +89,10 @@
             selectedLanguages[textBox] = language;
             textBox.querySelector('.selectedLanguage').innerText = language.charAt(0).toUpperCase() + language.slice(1);
         }
+        
+        function updateLanguage(button, language) {
+            button.querySelector('.selectedLanguage').textContent = language;
+        }
 
         function makeLowerCase(button) {
             var textBox = button.closest('.text-box').querySelector('textarea');
@@ -98,6 +102,7 @@
         function formatText(button) {
             var textBox = button.closest('.text-box').querySelector('textarea');
             var selectedLanguage = selectedLanguages[button.closest('.text-box')];
+            var dropdownButton = button.closest('.text-box').querySelector('.dropdown-toggle');
 
             // Send data to the Flask server
             fetch('/format_text', {
@@ -111,6 +116,9 @@
             .then(data => {
                 // Update the text area with the formatted text received from the server
                 textBox.value = data.formatted_text;
+
+                // Update the dropdown menu value
+                updateLanguage(dropdownButton, data.updatedLanguage);
             })
             .catch(error => console.error('Error:', error));
         }

@@ -18,6 +18,8 @@ pip install flask-sqlalchemy
 pip install pyspellchecker
 pip install flask_wtf
 pip install wtforms
+pip install black
+pip install mipsformatter
 
 
 # Flask Web App Tutorial
