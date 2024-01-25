@@ -1,12 +1,10 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, send_from_directory
 import json
 
 views = Blueprint('views', __name__)
 
-
 @views.route('/', methods=['GET', 'POST'])
 def home():
-
     return render_template("home.html")
 
 
@@ -16,11 +14,9 @@ def textEditor():
 
 @views.route('/images', methods=['GET', 'POST'])
 def images():
-
     return render_template("images.html")
 
 @views.route('/about', methods=['GET', 'POST'])
 def about():
-
     return render_template("about.html")
 
