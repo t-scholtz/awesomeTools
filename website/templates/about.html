@@ -10,9 +10,11 @@
     <body>
         <div class="tm-container-fluid">
             <section class="tm-site-header tm-flex-center tm-mb-50 tm-bgcolor-1 tm-border-rounded">
-                <i class="fa fa-hand-spock-o"></i>
-                <h1>About Me</h1>
-                <h1>⊂(⌒▽⌒)つ</h1>
+                
+                <h1>About Me  <i class="fa fa-hand-spock-o"></i></h1>
+                <img src="{{ url_for('static', filename='photos/me_2.jpeg') }}" alt="Picture of me" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%;">
+
+                <h2>⊂(⌒▽⌒)つ</h2>
             </section>
     
             <section class="tm-about tm-mb-80 tm-p-50 tm-bgcolor-2 tm-border-rounded">
@@ -31,9 +33,6 @@
                     </p>
                 </div>
             </section>
-            
-    
-           
     
             <section class="tm-contact tm-mb-50 tm-bgcolor-3 tm-border-rounded">
                 <div class="tm-contact-header tm-flex-center">
