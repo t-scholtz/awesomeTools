@@ -13,7 +13,8 @@
      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
      
     <!-- Your custom styles -->
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search-bar.css') }}">
+   
     <style>
         body {
             margin: 0;
@@ -38,9 +39,8 @@
             background-color: #222222; /* Adjust background color as needed */
             color: #F3EFE0; /* Adjust text color as needed */
             position: fixed; /* Fix the sidebar position */
-            top: 45px; /* Align the sidebar to the top */
+            top: 50px; /* Align the sidebar to the top */
             bottom: 0; /* Extend the sidebar to the bottom */
-            
         }
 
         .navbar {
@@ -63,7 +63,6 @@
         .nav-link:hover {
             background-color: #434242; /* Adjust hover background color as needed */
         }
-
         
     </style>
 </head>
@@ -79,13 +78,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <form class="custom-form header-form ms-lg-3 ms-md-3 me-lg-auto me-md-auto order-2 order-lg-0 order-md-0" action="#" method="get" role="form">
-            <input class="form-control" name="search" type="text" placeholder="Search" aria-label="Search">
-        </form>
+        <div class="wrapper">
+            <div class="search-input">
+              <a href="" target="_blank" hidden></a>
+              <input type="text" placeholder="Type to search...">
+              <div class="autocom-box">
+                <!-- here list are inserted from javascript -->
+              </div>
+              <div class="icon"><i class="fa fa-search"></i></div>
+            </div>
+          </div>
+        
+          <div></div>
+          
 
-        <div class="navbar-nav me-lg-2">
-            <!-- Add your notifications and profile dropdown here if needed -->
-        </div>
     </header>
 
     <div class="container-fluid">
@@ -124,14 +130,11 @@
                                 <i class="fa fa-info-circle"></i> About
                             </a>
                         </li>
-                        <!-- Add any additional sidebar items here -->
                     </ul>
                 </div>
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4" >
-                <!-- Content Goes Here -->
-                
                 <div class="container">
                     {% block content %} {% endblock %}
                 </div>
@@ -139,12 +142,13 @@
         </div>
     </div>
 
+    <script src="{{ url_for('static', filename='js/suggestions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
     <!-- Bootstrap and JavaScript Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-   
 
 </body>
 </html>

@@ -3,6 +3,9 @@
 {% block title %}About Me{% endblock %}
 
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.min.css') }}">
+
     <head>
         <title>About Me</title>
         
@@ -35,42 +38,42 @@
             </section>
     
             <section class="tm-contact tm-mb-50 tm-bgcolor-3 tm-border-rounded">
+               
                 <div class="tm-contact-header tm-flex-center">
-                    <i class="fas fa-map-pin fa-3x"></i>
-                    <h2>Contact</h2>
+                    <img src="{{ url_for('static', filename='photos/me_3.jpeg') }}" alt="Picture of Timmy... agiain" style="width: 180px; height: 400px; object-fit: cover; border-radius: 20px 20px 20px 20px;">
+
                 </div>
                 <div class="tm-contact-info">
-                    <address class="tm-mb-30">
-                        120 Curabitur sed tortor ultrices,
-                        congue odio eget, posuere urna.
-                        Praesent at rhoncus 10680
-                    </address>
-                    <div class="tm-text-white tm-mb-40">Tel: <a href="tel:0100200340" class="tm-link-white">010-020-0340</a></div>
+                    <h2>Contact Info <i class="fa fa-address-card"></i> </h2>
+                    <div class="tm-text-white tm-mb-0">Timothy J Scholtz</div>
+                    <div class="tm-text-white tm-mb-0"><i class="fa  fa-university"></i> University: <a href="https://www.buffalo.edu/" class="tm-link-white"> University At Buffalo</a></div>
+                    <div class="tm-text-white tm-mb-0"><i class="fa fa-envelope"></i> Email: <a href="email:tim.scholtz@outlook.com" class="tm-link-white"> tim.scholtz@outlook.com</a></div>
+                    <div class="tm-text-white tm-mb-40"><i class="fa fa-phone"></i> Tel: <a href="tel:716-907-8798" class="tm-link-white">010-020-0340</a></div>
+                    
                     <div class="tm-flex">
-                        <a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a>
+                       
+                        <a href="https://www.linkedin.com/in/t-j-scholtz" class="tm-social-link"><i class="fa fa-linkedin-square"></i></a>
+                        <a href="https://github.com/t-scholtz" class="tm-social-link"><i class="fa fa-github-alt"></i></a>
+                        <a href="https://t-scholtz.github.io/" class="tm-social-link"><i class="fa fa-globe"></i></a>
+                        <a href="https://www.instagram.com/tiny_treks/" class="tm-social-link"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCuToB0y-BPd_TXZwWGiJJOQ" class="tm-social-link"><i class="fa fa-youtube-play"></i></a>
                     </div>
                 </div>
                 <div class="tm-contact-form-container">
-                    <form id="contact-form" action="" method="POST" class="tm-contact-form">
-                          <input type="text" name="name" placeholder="name" required="" />
-                          <input type="email" name="email" placeholder="email" required="" />
-                          <textarea rows="5" name="message" class="tm-mb-30" placeholder="message" required=""></textarea>		          	
-                          <button type="submit" class="tm-right tm-btn-submit">send</button>          	
-                    </form>    
+                    <form id="contact-form" action="{{ url_for('views.about') }}" method="POST" class="tm-contact-form">
+                        <div class="tm-mb-30">
+                            <textarea rows="5" name="message" class="tm-mb-30" placeholder="Leave a comment, message, or a suggestion" required=""></textarea>
+                            <input type="email" name="suggestion-email" placeholder="Your email" required="" />
+                        </div>
+                        <button type="submit" class="tm-right tm-btn-submit">Send</button>
+                    </form>
                 </div>
             </section>
-    
-           
         </div>
         
         <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-style.css') }}">
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.min.css') }}">
         
     </body>
 {% endblock %}

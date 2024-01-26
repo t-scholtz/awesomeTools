@@ -1,17 +1,17 @@
 
-
-
 a {
     text-decoration: none;
     transition: all 0.3s ease;
     color: #38CCCC;
 }
 
+
+
 a:hover { color: #30ADAD; }
 
 .tm-about-text a { color: #9F6; }
 
-h1, h2, p, i, address, .tm-text-white { color: white; }
+h1, h2, p, address, .tm-text-white { color: white; }
 
 .tm-link-gray { color: #999999; }
 .tm-link-white { color: white; }
@@ -81,15 +81,9 @@ textarea {
     border: 0;
     border-bottom: 1px solid white;
     color: white;
-    padding: 15px 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
     width: 100%;
 }
 
-::-webkit-input-placeholder { color: white; } /* Edge */
-:-ms-input-placeholder { color: white; } /* Internet Explorer 10-11 */
-::placeholder { color: white; }
 .tm-right { margin-right: 0; margin-left: auto; }
 
 .tm-btn-submit {
@@ -118,9 +112,11 @@ textarea {
     transition: all 0.3s ease;
 }
 
-.tm-social-link:hover i.fa-facebook { color: #3b5998; }
-.tm-social-link:hover i.fa-twitter { color: #00acee; }
-.tm-social-link:hover i.fa-instagram { color: #3f729b; }
+
+.tm-social-link:hover i {
+    color: #c1eeee; /* Set the desired hover color for all social icons */
+}
+
 .tm-flex { display: flex; }
 address { font-style: normal; }
 
@@ -199,4 +195,6 @@ address { font-style: normal; }
 .tm-bgcolor-2 { background-color: #222222; }
 .tm-bgcolor-3 { background-color: #434242; }
 .tm-border-rounded { border-radius: 15px; }
+
+
 
