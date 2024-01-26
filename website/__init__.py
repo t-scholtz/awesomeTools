@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 from os import PathLike
 
@@ -8,7 +8,7 @@ DB_NAME = "database.db"
 
 def create_app():
     
-    app = Flask(__name__)
+    app = Flask(__name__, static_url_path='/static')
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['UPLOAD_FOLDER'] = 'static/files'
