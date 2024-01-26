@@ -18,10 +18,12 @@ def create_app():
     from .views import views
     from .pasteBin import pasteBin
     from .fileConverter import fileConverter
+    from .numConverter import numConverter
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(pasteBin, url_prefix='/')
     app.register_blueprint(fileConverter, url_prefix='/')
+    app.register_blueprint(numConverter, url_prefix='/')
 
     from .models import User, Note
     
