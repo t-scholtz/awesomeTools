@@ -40,6 +40,4 @@ def about():
 
 @views.route('/search/<query>')
 def search(query):
-    # Handle the search query and redirect to the appropriate URL
-    # Add your logic her
     print("?")

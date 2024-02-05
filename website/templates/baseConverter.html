@@ -1,0 +1,269 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <title>Base Converter</title>
+    <style>
+        .spacer {
+    height: 20px; /* Adjust the height as needed */
+}
+
+
+        #layout{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        hr {
+            border: 3px solid #22A39F;
+            margin: 10px 0;
+            border-radius: 3px;
+            width: 80%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #222222;
+        }
+
+        .position-label {
+            position: absolute;
+            white-space: nowrap;
+            transform: translateX(-50%);
+            top: 30px;
+        }
+
+        .slider-container {
+            width: 50%;
+            margin: 15px auto;
+            position: relative;
+        }
+
+        .slider-container input {
+            width: 100%; /* Full width for the input within the slider container */
+        }
+
+        .slider-container .slider::-webkit-slider-thumb {
+            width: 13px;
+            height: 13px;
+            background: #22A39F;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-container .slider::-moz-range-thumb {
+            width: 13px;
+            height: 13px;
+            background: #22A39F;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-container .slider::-moz-range-track {
+            background: #222222;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .data {
+            text-align: right;
+            width: 120%;
+            margin: 4px auto; /* Added margin for spacing between text inputs */
+            
+        }
+
+        .data-container {
+            display: flex;
+            align-items: center;
+            width: 55%;
+        }
+
+        .data-label {
+            flex: 1;
+            margin-right: 12px;
+            text-align: left; 
+         }
+
+        /* Added styles for better alignment */
+        .data-container label {
+            min-width: 150px; /* Set a minimum width for labels to align properly */
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <div id="layout">
+        <h1>Base Converter</h1>
+        <h2>Whole Numbers</h2>
+
+        <hr>
+
+        <div class="slider-container" data-min="0" data-max="2">
+            <div class="position-label" style="left: 0%; top: 20px;">Signed</div>
+            <div class="position-label" style="left: 50%; top: 20px;">1's Complement</div>
+            <div class="position-label" style="left: 100%; top: 20px;">2's Complement</div>
+            <input type="range" class="slider" min="0" max="2" step="1" value="0" onchange="updateFromDecimal()">
+        </div>
+
+        <div class="slider-container" data-min="0" data-max="3">
+            <div class="position-label" style="left: 0%; top: 20px;">8-bit</div>
+            <div class="position-label" style="left: 33%; top: 20px;">16-bit</div>
+            <div class="position-label" style="left: 66%; top: 20px;">32-bit</div>
+            <div class="position-label" style="left: 100%; top: 20px;">64-bit</div>
+            <input type="range" class="slider" min="0" max="3" step="1" value="0" onchange="updateFromDecimal()">
+        </div>
+
+        <div class="spacer"></div>
+    
+        <div class="data-container">
+            <label class="data-label" >Decimal</label>
+            <input class="data" type="text" id="decimalInput" placeholder="Decimal" oninput="updateFromDecimal()">
+        </div>
+        <div class="data-container">
+            <label class="data-label" >Binary</label>
+            <input class="data" type="text" id="binaryInput" placeholder="Binary" oninput="updateFromBinary()">
+        </div>
+        <div class="data-container">
+            <label class="data-label" >Hexidecimal</label>
+            <input class="data" type="text" id="hexInput" placeholder="Hexadecimal" oninput="updateFromHexadecimal()">
+        </div>
+    
+        <div class="spacer"></div>
+        <h2>Floating Point</h2>
+        <hr>
+
+        <div class="slider-container" data-min="0" data-max="1">
+            <div class="position-label" style="left: 0%; top: 20px;">Binary</div>
+            <div class="position-label" style="left: 100%; top: 20px;">Hex</div>
+            <input type="range" class="slider" min="0" max="1" step="1" value="0" onchange="updateFromReal()">
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="data-container">
+            <label class="data-label" >Real</label>
+            <input class="data" type="text" id="real" placeholder="Real" oninput="updateFromReal()">
+        </div>
+        <div class="data-container">
+            <label class="data-label" >Float</label>
+            <input class="data" type="text" id="float" placeholder="Float" oninput="updateFromFloat()">
+        </div>
+        <div class="data-container">
+            <label class="data-label" >Double</label>
+            <input class="data" type="text" id="double" placeholder="Double" oninput="updateFromDouble()">
+        </div>
+    
+    </div>
+
+    <script>
+        
+
+        
+        function updateFromDecimal() {
+            const decimalValue = parseInt(document.getElementById('decimalInput').value, 10);
+
+            // Get the slider values
+            const unsignedSliderValue = document.querySelector('.slider-container[data-min="0"][data-max="2"] .slider').value;
+            const bitSliderValue = document.querySelector('.slider-container[data-min="0"][data-max="3"] .slider').value;
+
+            // Send data to the Flask server
+            fetch('/deciUpdate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    decimalValue: decimalValue,
+                    unsignedSliderValue: unsignedSliderValue,
+                    bitSliderValue: bitSliderValue,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update binary and hexadecimal inputs with the received data
+                document.getElementById('binaryInput').value = data.binaryValue;
+                document.getElementById('hexInput').value = data.hexValue;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function updateFromHexadecimal() {
+            const decimalValue = parseInt(document.getElementById('hexInput').value, 10);
+
+            // Get the slider values
+            const unsignedSliderValue = document.querySelector('.slider-container[data-min="0"][data-max="2"] .slider').value;
+          fetch('/hexUpdate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    hexValue: hexValue,
+                    unsignedSliderValue: unsignedSliderValue,
+                    bitSliderValue: bitSliderValue,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update binary and hexadecimal inputs with the received data
+                document.getElementById('decimalInput').value = data.decimalValue;
+                document.getElementById('binaryInput').value = data.binaryValue;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function updateFromBinary() {
+            const binaryValue = parseInt(document.getElementById('binaryInput').value, 10);
+
+            const unsignedSliderValue = document.querySelector('.slider-container[data-min="0"][data-max="2"] .slider').value;
+            const bitSliderValue = document.querySelector('.slider-container[data-min="0"][data-max="3"] .slider').value;
+
+            fetch('/binUpdate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    binaryValue: binaryValue,
+                    unsignedSliderValue: unsignedSliderValue,
+                    bitSliderValue: bitSliderValue,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update binary and hexadecimal inputs with the received data
+                document.getElementById('decimalInput').value = data.decimalInput;
+                document.getElementById('hexInput').value = data.hexValue;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function updateFromReal(){
+            const realValue = document.getElementById('real').value;
+            const binOrHex = document.querySelector('.slider-container[data-min="0"][data-max="1"] .slider').value;
+
+            fetch('/updateFromReal', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    realValue: realValue,
+                    binOrHex: binOrHex,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('float').value = data.float;
+                document.getElementById('double').value = data.double;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+
+    </script>
+    </body>
+    </html>    
+    {% endblock %}

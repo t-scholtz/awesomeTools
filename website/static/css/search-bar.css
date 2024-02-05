@@ -3,17 +3,28 @@
     background: #22A39F;
   }
 
-  input[type="text"]::placeholder {
-    color: #222222; /* Set the desired placeholder text color */
-}
-
-  .wrapper .search-input{
+  .search-bar-wrapper .search-input {
     background: #fff;
-    width: 100%;
+    width: 130%; /* Adjust the width as needed */
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-  }
+}
+
+.search-bar-wrapper .search-input input {
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 50px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+    color: #222222 !important; /* Use !important to ensure the color is applied */
+}
+
+/* Add more specific selectors for other styles as needed */
+
   .search-input input{
     height: 55px;
     width: 100%;
@@ -31,29 +42,31 @@
     position: absolute; /* Set the position of the autocom-box to absolute */
     background-color: #fff; /* Set a background color */
     border: 1px solid #ccc; /* Add a border for styling */
-    max-height: 200px; /* Limit the maximum height to avoid excessive scrolling */
+    width: 100%;
     overflow-y: auto; /* Enable vertical scrolling if needed */
     z-index: 1000; /* Ensure it appears above other elements */
-    
+    color:#222222;
     padding: 0;
     opacity: 0;
     pointer-events: none;
     max-height: 280px;
     overflow-y: auto;
+    border-radius: 5px;
   }
   .search-input.active .autocom-box{
     padding: 10px 8px;
     opacity: 1;
     pointer-events: auto;
   }
-  .autocom-box li{
+  .autocom-box li {
     list-style: none;
     padding: 8px 12px;
     display: none;
-    width: 100%;
+    width: 100%; /* Set the width to 100% to match the parent */
     cursor: default;
+    
     border-radius: 3px;
-  }
+}
   .search-input.active .autocom-box li{
     display: block;
   }
@@ -72,3 +85,7 @@
     color: #434242;
     cursor: pointer;
   }
+
+
+  
+  

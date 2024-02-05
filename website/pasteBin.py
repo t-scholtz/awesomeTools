@@ -70,11 +70,9 @@ def autoDetect(input):
 
 @pasteBin.route('/spell_Check', methods=['POST'])
 def SpellCheck():
-    print("spellCheck")
      # Receive data from the client (JavaScript)
     data = request.json
     text = data.get('text')
-    print(text)
     spell = SpellChecker()
     # Split the text into words
     words = text.split()
