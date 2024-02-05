@@ -1,8 +1,50 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
-<h1 align="center">Awesome Tools</h1>
-<ul class="list-group list-group-flush" id="notes">
-  <p>Awesome tools is a collection of tools to formate and edit text, convert files, and more simple but useful feature</p>
-</ul>
+<title>Home</title>
+<style>
 
+
+
+  header img {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px 20px 20px 20px; /* Adding curved corners to the header image */
+      height: auto;
+      display: block;
+  }
+
+  main {
+      padding: 20px;
+      text-align: center;
+  }
+
+  .logo-container {
+      margin-top: 20px; /* Adding spacing between the header and the logo container */
+  }
+
+  .logo-circle {
+      width: 300px; /* Adjust the size as needed */
+      height: 300px; /* Adjust the size as needed */
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto; /* Centering the logo within its container */
+      display: block;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img src="{{ url_for('static', filename='photos/HeaderCedarTools.png') }}" alt="Cedar Tools header Logo">
+</header>
+
+<main>
+  <h1>Welcome!</h1>
+  <p>Cedar tools is a personal project, aimed at solving those simple pesky tasks that always seem to pop up in the world of Computer Enginer/Science. Such as converting between hex to binary, formating text, or converting files</p>
+
+  <div class="logo-container">
+      <img src="{{ url_for('static', filename='photos/Cedar_tools.png') }}" alt="Cedar Tools logo" class="logo-circle">
+  </div>
+</main>
+</body>
 {% endblock %}

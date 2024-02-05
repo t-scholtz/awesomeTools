@@ -43,14 +43,6 @@
             width: 100%; /* Full width for the input within the slider container */
         }
 
-        .slider-container .slider::-webkit-slider-thumb {
-            width: 13px;
-            height: 13px;
-            background: #22A39F;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
         .slider-container .slider::-moz-range-thumb {
             width: 13px;
             height: 13px;
@@ -60,6 +52,36 @@
         }
 
         .slider-container .slider::-moz-range-track {
+            background: #222222;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        /* WebKit (Chrome, Safari) */
+        .slider-container .slider::-webkit-slider-thumb {
+            width: 13px;
+            height: 13px;
+            background: #22A39F;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-container .slider::-webkit-slider-runnable-track {
+            background: #222222;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        /* Standard (Opera, Edge, etc.) */
+        .slider-container .slider::-ms-thumb {
+            width: 13px;
+            height: 13px;
+            background: #22A39F;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-container .slider::-ms-track {
             background: #222222;
             height: 10px;
             border-radius: 5px;
