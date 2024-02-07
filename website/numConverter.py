@@ -132,3 +132,47 @@ def updateFromReal():
     
 
     return jsonify({'double': double_value, 'float': float_value})
+
+@numConverter.route('/updateFromFloat', methods=['POST'])
+def updateFromFloat():
+    data = request.get_json()
+    
+    float_value = (data['floatValue'])
+    binOrHex= int(data['binOrHex'])
+
+    if binOrHex==0:
+        float_rep = struct.pack('!f', real_value)
+        float_value = '0b' +''.join(format(byte, '08b') for byte in float_rep)
+        double_rep = struct.pack('!d', real_value)
+        double_value = '0b' +''.join(format(byte, '08b') for byte in double_rep)
+    
+    elif binOrHex==1:
+        binary_representation = struct.pack('!f', real_value)
+        float_value = '0x' +''.join(format(byte, '02X') for byte in binary_representation)
+        hex_representation = struct.pack('!d', real_value)
+        double_value = '0x' +''.join(format(byte, '02X') for byte in hex_representation)
+    
+
+    return jsonify({'double': double_value, 'float': float_value})
+
+@numConverter.route('/updateFromDouble', methods=['POST'])
+def updateFromDouble():
+    data = request.get_json()
+    
+    real_value = float(data['realValue'])
+    binOrHex= int(data['binOrHex'])
+
+    if binOrHex==0:
+        float_rep = struct.pack('!f', real_value)
+        float_value = '0b' +''.join(format(byte, '08b') for byte in float_rep)
+        double_rep = struct.pack('!d', real_value)
+        double_value = '0b' +''.join(format(byte, '08b') for byte in double_rep)
+    
+    elif binOrHex==1:
+        binary_representation = struct.pack('!f', real_value)
+        float_value = '0x' +''.join(format(byte, '02X') for byte in binary_representation)
+        hex_representation = struct.pack('!d', real_value)
+        double_value = '0x' +''.join(format(byte, '02X') for byte in hex_representation)
+    
+
+    return jsonify({'double': double_value, 'float': float_value})

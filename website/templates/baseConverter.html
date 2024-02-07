@@ -284,7 +284,49 @@
             .catch(error => console.error('Error:', error));
         }
 
+        function updateFromFloat(){
+            const floatValue = document.getElementById('float').value;
+            const binOrHex = document.querySelector('.slider-container[data-min="0"][data-max="1"] .slider').value;
 
+            fetch('/updateFromFloat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    floatValue: floatValue,
+                    binOrHex: binOrHex,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('real').value = data.real;
+                document.getElementById('double').value = data.double;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function updateFromDouble(){
+            const doubleValue = document.getElementById('double').value;
+            const binOrHex = document.querySelector('.slider-container[data-min="0"][data-max="1"] .slider').value;
+
+            fetch('/updateFromDouble', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    doubleValue: doubleValue,
+                    binOrHex: binOrHex,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('real').value = data.real;
+                document.getElementById('float').value = data.flaot;
+            })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
     </body>
     </html>    
