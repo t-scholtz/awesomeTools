@@ -1,0 +1,27 @@
+.custom-title {
+    color: #F3EFE0; /* Custom color */
+    margin-bottom: 10px;
+    font-size: 48px; /* Custom font size */
+    font-weight: bold; /* Custom font weight */
+    text-align: center; /* Center align the title */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.heading-box{
+    background-color: #22A39F; /* Set your desired background color */
+    border-radius: 10px; /* Set the border-radius to make it rounded */
+    padding: 20px; /* Adjust padding as needed */
+    width: 80%; /* Set the width of the search box */
+    margin: 0 auto; /* Center the search box horizontally */
+    margin-bottom: 20px;
+}
+
+.table.is-hoverable tbody tr:hover {
+    background-color: #22A39F; /* Change to the desired hover color */
+}
+
+#dataDisplay {
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto; /* This will center the table horizontally */
+}

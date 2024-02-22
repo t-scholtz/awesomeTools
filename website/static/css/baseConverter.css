@@ -1,0 +1,116 @@
+.spacer {
+    height: 20px; /* Adjust the height as needed */
+}
+
+#layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+hr {
+    border: 3px solid #22A39F;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 80%;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.position-label {
+    position: absolute;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    top: 30px;
+}
+
+.slider-container {
+    width: 50%;
+    margin: 15px auto;
+    position: relative;
+}
+
+.slider-container input {
+    width: 100%; /* Full width for the input within the slider container */
+}
+
+
+.slider-container .slider::-ms-track {
+    background: #222222;
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* Style the slider */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specify a height */
+    background: #22A39F; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+.data {
+    text-align: right;
+    font-size: 18px;
+    width: 140%;
+    margin: 4px auto; /* Added margin for spacing between text inputs */
+    
+}
+
+.data-container {
+    display: flex;
+    align-items: center;
+    width: 55%;
+}
+
+.data-label {
+    flex: 1;
+    margin-right: 12px;
+    text-align: left; 
+    color: white;
+    font-size: 18px;
+ }
+
+/* Added styles for better alignment */
+.data-container label {
+    min-width: 150px; /* Set a minimum width for labels to align properly */
+}
+
+.custom-title {
+    color: #F3EFE0; /* Custom color */
+    margin-bottom: 10px;
+    font-size: 48px; /* Custom font size */
+    font-weight: bold; /* Custom font weight */
+    text-align: center; /* Center align the title */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.custom-sub-title{
+    color: #222222;
+    font-size: 24px;
+    text-align: center;
+}
+
+.heading-box {
+    background-color: #22A39F; /* Set your desired background color */
+    border-radius: 10px; /* Set the border-radius to make it rounded */
+    padding: 20px; /* Adjust padding as needed */
+    display: block; /* Display the heading box as a block element to take up full width */
+    width: 80%; /* Set the width to 100% to make it spread across the page */
+    margin-top: 20px; /* Add margin for spacing */
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

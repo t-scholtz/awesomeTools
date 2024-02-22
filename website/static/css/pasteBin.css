@@ -1,0 +1,36 @@
+.note {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+
+.custom-title {
+    color: #F3EFE0; /* Custom color */
+    margin-bottom: 10px;
+    font-size: 48px; /* Custom font size */
+    font-weight: bold; /* Custom font weight */
+    text-align: center; /* Center align the title */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+
+.heading-box {
+    background-color: #22A39F; /* Set your desired background color */
+    border-radius: 10px; /* Set the border-radius to make it rounded */
+    padding: 20px; /* Adjust padding as needed */
+    display: block; /* Display the heading box as a block element to take up full width */
+    width: 80%; /* Set the width to 100% to make it spread across the page */
+    margin-top: 20px; /* Add margin for spacing */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+hr {
+    border: 3px solid #22A39F;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 80%;
+}

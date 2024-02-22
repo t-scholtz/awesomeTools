@@ -1,37 +1,8 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
-<title>Home</title>
-<style>
 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
 
-
-  header img {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px 20px 20px 20px; /* Adding curved corners to the header image */
-      height: auto;
-      display: block;
-  }
-
-  main {
-      padding: 20px;
-      text-align: center;
-  }
-
-  .logo-container {
-      margin-top: 20px; /* Adding spacing between the header and the logo container */
-  }
-
-  .logo-circle {
-      width: 300px; /* Adjust the size as needed */
-      height: 300px; /* Adjust the size as needed */
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto; /* Centering the logo within its container */
-      display: block;
-  }
-</style>
 </head>
 <body>
 <header>
@@ -39,12 +10,84 @@
 </header>
 
 <main>
-  <h1>Welcome!</h1>
-  <p>Cedar tools is a personal project, aimed at solving those simple pesky tasks that always seem to pop up in the world of Computer Enginer/Science. Such as converting between hex to binary, formating text, or converting files</p>
+
+  <section class="hero custom-hero-color welcome is-small">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Welcome!
+            </h1>
+            <h2 class="subtitle">
+                Cedar tools is a personal project, aimed at solving those simple pesky tasks that always seem to pop up.
+            </h2>
+        </div>
+    </div>
+  </section>
+  
+  <div id="tile-container"></div>
+
+
 
   <div class="logo-container">
       <img src="{{ url_for('static', filename='photos/Cedar_tools.png') }}" alt="Cedar Tools logo" class="logo-circle">
   </div>
 </main>
 </body>
+
+<script>
+  // Data for boxes
+  const boxes = [
+    { title: "fa fa-paste", subtitle: "Paste Bin", url: "/pasteBin", color: "#1AB1ED" },
+    { title: "fa fa-exchange", subtitle: "Base Converter", url: "/baseConverter", color: "#1AED9E" },
+    { title: "fa fa-balance-scale", subtitle: "Encoding Tables", url: "/encondingTable", color: "#1A6EED" },
+    { title: "fa fa-info-circle", subtitle: "About", url: "/about", color: "#ED401A" },
+    { title: "fa fa-paste", subtitle: "Paste Bin", url: "/pasteBin", color: "#ED1AC1" },
+    { title: "fa fa-exchange", subtitle: "Base Converter", url: "/baseConverter", color: "#EDC91A" },
+    { title: "fa fa-balance-scale", subtitle: "Encoding Tables", url: "/encondingTable", color: "#ED641A" },
+    { title: "fa fa-info-circle", subtitle: "About", url: "/about", color: "#AD663E" }
+  ];
+
+  // Function to generate a box
+  function generateBox(boxData) {
+    return `
+    <div class="tile is-parent">
+      <article class="tile is-child box" style="background-color: ${boxData.color};">
+        <a href="${boxData.url}">
+          <p class="title"><i class="${boxData.title}"></i></p>
+          <p class="subtitle">${boxData.subtitle}</p>
+        </a>
+      </article>
+    </div>
+  `;
+  }
+
+  function populateBoxes(boxesData) {
+    const container = document.getElementById('tile-container');
+    container.innerHTML = ''; // Clear existing content
+    let boxCount = 0;
+    let currentTiles;
+    boxesData.forEach(boxData => {
+      if (boxCount % 4 === 0) {
+        // Create a new info-tiles section for every 4 boxes
+        currentTiles = document.createElement('section');
+        currentTiles.className = 'info-tiles';
+        const ancestorDiv = document.createElement('div');
+        ancestorDiv.className = 'tile is-ancestor has-text-centered';
+        currentTiles.appendChild(ancestorDiv);
+        container.appendChild(currentTiles);
+      }
+      const boxContainer = document.createElement('div');
+      boxContainer.className = 'tile is-parent';
+      // Instead of setting innerHTML directly, use insertAdjacentHTML to render HTML markup properly
+      boxContainer.insertAdjacentHTML('beforeend', generateBox(boxData));
+      currentTiles.lastChild.appendChild(boxContainer);
+      boxCount++;
+    });
+  }
+
+
+
+  // Initial population of boxes
+  populateBoxes(boxes);
+</script>
 {% endblock %}

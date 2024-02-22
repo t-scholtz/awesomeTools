@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %}Search{% endblock %} {% block content
+    %}
+    <head><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
+    </head> 
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="search-box" id="searchArea">
+                    <h1 class="custom-title">Search</h1>
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input class="input" type="text" id="searchBar2" placeholder="Search...">
+                        </div>
+                        <div class="control" id="searchBar">
+                            <a class="button is-info">
+                                <span class="icon is-small"><i class="fa fa-search"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <ul id="searchResultsContainer"></ul>
+
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+    </body>
+{% endblock %}

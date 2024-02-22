@@ -1,0 +1,129 @@
+html, body, main {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+     font-size: 16px;
+    line-height: 1.5;
+    height: 100%;
+    background: #434242;
+    color: #ECF0F3;
+  }
+
+.navbar,
+.main  {
+    padding-left: 50px; /* Adjust left padding as needed */
+    padding-right: 50px; /* Adjust right padding as needed */
+    font: roboto slab;
+}
+
+.navbar-item:hover {
+    background-color: transparent !important;
+    color: #a88f35; /* Change the color to your desired color */
+}
+
+.navbar{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.navbar.is-gradient {
+    background: linear-gradient(to right, #22B3AE, #22D2CC); /* Change gradient colors as per your preference */
+}
+.navbar-item {
+    &.has-dropdown {
+      .navbar-dropdown {
+        display: none;
+      }
+      &.is-hoverable:hover {
+        .navbar-dropdown {
+          display: block;
+        }
+      }
+    }
+  }
+
+.navbar-item,
+.navbar-dropdown,
+.navbar-link {
+    font-weight: bold;
+    font-size: 28px;
+    color: #F3EFE0; /* Change the color to your desired color */
+}
+
+.navbar-item{
+    font-family: 'Roboto Slab', serif; /* Use Roboto Slab font */
+}
+
+.navbar-dropdown {
+    background-color: #434242; 
+    min-width: 250px; 
+    max-width: 400px; 
+    width: auto !important; 
+    right: 0; 
+    left: auto; 
+    border: 3px solid #F3EFE0; 
+    border-radius: 8px; 
+}
+  
+  /* Style for headings */
+  .navbar-item-heading {
+    padding-left: 5px;
+    font-weight: bold;
+    color: #22A39F; /* Adjust color as needed */
+  }
+  
+  /* Style for links */
+  .navbar-dropdown a.navbar-item {
+    padding-left: 30px;
+    text-align: right; 
+    font-weight: lighter;
+    font-size: 18px;
+  }
+
+
+.search-input input[type="text"] {
+    border-radius: 20px; /* Adjust the value to change the roundness */
+    font-size: 20px;
+    color: #222222; /* Change the color to your desired color */
+    border: 2px solid #434242; 
+
+}
+
+.search-input .icon {
+    border-radius: 0 20px 20px 0; /* Adjust the value to match the input's border-radius */
+    font-size: 18px;
+    padding-top: 3px;
+
+}
+
+.autocomplete-suggestion {
+    padding: 8px;
+    background-color: #F3EFE0;
+    border: 2px solid #222222;
+    cursor: pointer;
+}
+
+
+.autocom-box {
+    font-size: 20px;
+    position: absolute;
+    width: 100%;
+    background-color: #F3EFE0;
+    z-index: 99;
+    max-height: 200px;
+    overflow-y: auto;
+    color: #222222;
+    border-radius: 10px; /* Rounded edges */
+    font-weight: lighter;
+    padding-left: 10px;
+  }
+
+.li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+  
+
+  
+  
+  
+  

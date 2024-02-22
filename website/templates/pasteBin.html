@@ -3,210 +3,59 @@
 {% block title %}Paste Bin{% endblock %}
 
 {% block content %}
-    <h1 align="center">Paste Bin</h1>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pasteBin.css') }}">
+<script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.11.0/css/bulma.min.css"/>
 
-    <!-- Container for text boxes -->
-    <div id="text-box-container" class="mt-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<!-- Simple List -->
+<div id="simpleList" class="content">
+  <div class="box">
+    <p>This is <a href="http://rubaxa.github.io/Sortable/">Sortable</a></p>
+  </div>
+  <div class="box">
+    <p>It works with Bulma...</p>
+  </div>
+  <div class="box">
+    <p>...out of the box.</p>
+  </div>
+  <div class="box">
+    <p>It has support for touch devices.</p>
+  </div>
+  <div class="box">
+    <p>Just drag some elements around.</p>
+  </div>
+</div>
 
-    <!-- Button to add a new text box -->
-    <button class="btn btn-primary" onclick="addNewTextBox()">Add New Text Box</button>
+<!-- List with handle -->
+<div id="listWithHandle" class="content">
+  <div class="box">
+    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 1
+  </div>
+  <div class="box">
+    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 2
+  </div>
+  <div class="box">
+    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 3
+  </div>
+  <div class="box">
+    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 4
+  </div>
+  <div class="box">
+    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 5
+  </div>
+</div>
 
-    <style>
-        .text-box {
-            position: relative;
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            cursor: move;
-        }
+<script>
+  Sortable.create(simpleList, { /* options */ });
 
-        .text-box-content {
-            display: flex;
-            flex-direction: column;
-        }
+  // List with handle
+  Sortable.create(listWithHandle, {
+    handle: '.icon',
+    animation: 150
+  });
+</script>
 
-        .textarea-container {
-            position: relative;
-        }
-
-        .delete-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 3px 6px;
-            cursor: pointer;
-        }
-
-        .text-box-buttons {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-    </style>
-
-    <script>
-        var selectedLanguages = {}; // Store selected languages for each text box
-
-        function addNewTextBox() {
-            var textBoxContainer = document.getElementById('text-box-container');
-
-            var newTextBox = document.createElement('div');
-            newTextBox.className = 'text-box mb-4';
-            newTextBox.setAttribute('draggable', 'true');
-            newTextBox.ondragstart = function(event) {
-                drag(event);
-            };
-            newTextBox.innerHTML = `
-                <div class="text-box-content">
-                    <textarea class="form-control" rows="8" placeholder="Enter text"></textarea>
-                    <div class="text-box-buttons">
-                        <button class="btn btn-success ml-2" onclick="copyToClipboard(this)"><i class="fa fa-clipboard"></i> Copy</button>
-                        <button class="btn btn-warning ml-2" onclick="makeLowerCase(this)"><i class="fa fa-font"></i> Lower Case</button>
-                        <button class="btn btn-info ml-2" onclick="removeWhitespace(this)"><i class="fa fa-magic"></i> White Space</button>
-                        <button class="btn btn-dark ml-2 mr-2" onclick="spellCheck(this)"><i class="fa fa-check-circle-o"></i> Auto-Correct</button>
-                        <div class="dropdown ">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="selectedLanguage">Select Language</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'python')">Python</a>
-                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'c_java')">C/Java</a>
-                                <a class="dropdown-item" href="#" onclick="changeLanguage(this, 'gen')">Genreal Text</a>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary ml-2" onclick="formatText(this)"><i class="fa fa-align-left"></i> Format</button> 
-                        <span class="btn btn-danger ml-2 delete-button" onclick="deleteTextBox(this)">X</span>
-                    </div>
-                </div>
-            `;
-
-            textBoxContainer.appendChild(newTextBox);
-        }
-
-        function changeLanguage(element, language) {
-            var textBox = element.closest('.text-box');
-            selectedLanguages[textBox] = language;
-            textBox.querySelector('.selectedLanguage').innerText = language.charAt(0).toUpperCase() + language.slice(1);
-        }
-        
-        function updateLanguage(button, language) {
-            button.querySelector('.selectedLanguage').textContent = language;
-        }
-
-        function makeLowerCase(button) {
-            var textBox = button.closest('.text-box').querySelector('textarea');
-            textBox.value = textBox.value.toLowerCase();
-        }
-
-        function formatText(button) {
-            var textBox = button.closest('.text-box').querySelector('textarea');
-            var selectedLanguage = selectedLanguages[button.closest('.text-box')];
-            var dropdownButton = button.closest('.text-box').querySelector('.dropdown-toggle');
-
-            // Send data to the Flask server
-            fetch('/format_text', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 'text': textBox.value, 'language': selectedLanguage }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Update the text area with the formatted text received from the server
-                textBox.value = data.formatted_text;
-
-                // Update the dropdown menu value
-                updateLanguage(dropdownButton, data.updatedLanguage);
-            })
-            .catch(error => console.error('Error:', error));
-        }
-
-        function removeWhitespace(button) {
-            var textBox = button.closest('.text-box').querySelector('textarea');
-            textBox.value = textBox.value.replace(/\s+/g, ''); // Removes all whitespace
-        }
-
-        function spellCheck(button) {
-            var textBox = button.closest('.text-box').querySelector('textarea');
-            var selectedLanguage = selectedLanguages[button.closest('.text-box')];
-
-            // Send data to the Flask server
-            fetch('/spell_Check', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 'text': textBox.value}),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Update the text area with the formatted text received from the server
-                textBox.value = data.formatted_text;
-            })
-            .catch(error => console.error('Error:', error));
-        }
-
-        function copyToClipboard(button) {
-            var textBox = button.closest('.text-box').querySelector('textarea');
-            textBox.select();
-            document.execCommand('copy');
-        }
-
-        function deleteTextBox(button) {
-            var textBox = button.closest('.text-box');
-            textBox.remove();
-        }
-
-        // Functions for drag and drop
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-
-        function drag(event) {
-            event.dataTransfer.setData('text', 'text-box');
-        }
-        function drop(event) {
-            event.preventDefault();
-            var data = event.dataTransfer.getData('text');
-            var draggedElement = document.querySelector('.' + data);
-            var dropTarget = event.target.closest('.text-box');
-
-            if (dropTarget) {
-                dropTarget.parentNode.insertBefore(draggedElement, dropTarget.nextSibling);
-            } else {
-                document.getElementById('text-box-container').appendChild(draggedElement);
-            }
-        }
-        function dragOverUpdate(event) {
-            event.preventDefault();
-            var data = event.dataTransfer.getData('text');
-            var draggedElement = document.querySelector('.' + data);
-            var dropTarget = event.target.closest('.text-box');
-
-            if (dropTarget) {
-                if (!dropTarget.contains(draggedElement)) {
-                    // Insert a placeholder element before the drop target
-                    var placeholder = document.createElement('div');
-                    placeholder.className = 'text-box-placeholder';
-                    dropTarget.parentNode.insertBefore(placeholder, dropTarget);
-
-                    // Move the dragged element to the placeholder's position
-                    placeholder.parentNode.insertBefore(draggedElement, placeholder.nextSibling);
-
-                    // Remove the placeholder
-                    placeholder.remove();
-                }
-            }
-        }
-        // Attach dragOverUpdate to dragover event
-        document.getElementById('text-box-container').addEventListener('dragover', dragOverUpdate);
-
-        window.addEventListener('load', addNewTextBox);
-    </script>
 {% endblock %}
-
-
 
 

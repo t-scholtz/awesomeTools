@@ -1,21 +1,26 @@
-// getting all required elements
-const searchWrapper = document.querySelector(".search-input");
+const searchWrapper = document.getElementById("searchWrapper");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
+
 let webLink;
 
-// if user presses any key and releases
 inputBox.oninput = (e) => {
-    let userData = e.target.value.trim(); // user entered data
+    let userData = e.target.value.trim().toLowerCase();// user entered data
     let emptyArray = [];
 
     if (userData) {
         emptyArray = suggestions.filter((item) => {
             // Filtering suggestions based on user input
-            return item.text.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+            return item.text.toLocaleLowerCase().startsWith(userData);
         });
+
+        if (emptyArray.length === 0) {
+            emptyArray = suggestions.filter((item) => {
+                // Filtering suggestions based on user input at the beginning of the suggestion text
+                return item.text.toLowerCase().includes(userData);
+            });
+        }
 
         // Convert HTML strings to DOM elements
         emptyArray = emptyArray.map((item) => {
@@ -29,15 +34,11 @@ inputBox.oninput = (e) => {
             return { text: item.innerHTML, url: item.getAttribute('data-url'), info: item.getAttribute('data-info') };
         });
 
-        console.log("emptyArray:", emptyArray); // Log the content of emptyArray
-
         showSuggestions(emptyArray);
     } else {
         hideSuggestions();
     }
 };
-
-
 
 function select(element) {
     let selectData = element.textContent;
@@ -45,20 +46,23 @@ function select(element) {
     search();
 }
 
+inputBox.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        search();
+    }
+});
 
 function search() {
     let searchData = inputBox.value.trim();
     if (searchData) {
-        webLink = `https://www.google.com/search?q=${searchData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
+        // Redirect to the search page with the search query as a parameter
+        window.location.href = `/search?q=${encodeURIComponent(searchData)}`;
     }
     hideSuggestions();
 }
 
 
 function showSuggestions(list) {
-    console.log("list:", list); 
     let listData;
     if (!list.length) {
         listData = "<li>No suggestions found</li>";
@@ -66,9 +70,7 @@ function showSuggestions(list) {
         listData = "";
         for (let i = 0; i < list.length; i++) {
             const item = list[i];
-            console.log("item.text:", item.text); // Log the text property
-            console.log("item.url:", item.url);   // Log the url property
-            listData += `<li data-url="${item.url}" data-info="${item.info}">${item.text}</li>`;
+            listData += `<li data-url="${item.url}" >${item.text}</li>`;
         }
     }
     suggBox.innerHTML = listData;
@@ -79,10 +81,7 @@ function showSuggestions(list) {
         item.addEventListener('click', () => {
             // Check if the selected item is not "No suggestions found"
             if (item.textContent !== "No suggestions found") {
-                // Fill the input box with the selected suggestion and info
-                inputBox.value = item.textContent + ' - ' + item.getAttribute('data-info');
-
-                // Redirect to the corresponding URL
+                inputBox.value = item.textContent;
                 window.location.href = item.getAttribute('data-url');
             }
         });

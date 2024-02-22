@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Econding Tables{% endblock %} {%
+block content
+%}
+
+<head><link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='css/encondingTable.css') }}">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="heading-box">
+                <h1 class="custom-title">Data Tables</h1>
+                <div class="select">
+                    <select id="infoSelect" onchange="loadData()">
+                        <option value="ascii">ASCII Table</option>
+                        <option value="unicode">Unicode Table</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="dataDisplay">
+            <!-- Data will be displayed here -->
+        </div>
+
+    </section>
+</body>
+
+<script>
+    function loadData() {
+        var selectBox = document.getElementById("infoSelect");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+        var url = "/data/" + selectedValue;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                var table = "<table class='table is-striped table is-hoverable table is-fullwidth'><thead><tr>";
+                Object.keys(data[0]).forEach(key => {
+                    table += "<th>" + key + "</th>";
+                });
+                table += "</tr></thead><tbody>";
+                data.forEach(row => {
+                    table += "<tr>";
+                    Object.values(row).forEach(value => {
+                        table += "<td>" + value + "</td>";
+                    });
+                    table += "</tr>";
+                });
+                table += "</tbody></table>";
+                document.getElementById("dataDisplay").innerHTML = table;
+            });
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        loadData();
+    });
+</script>
+
+{% endblock %}

@@ -1,126 +1,19 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
     %}
-    <title>Base Converter</title>
-    <style>
-        .spacer {
-    height: 20px; /* Adjust the height as needed */
-}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/baseConverter.css') }}">
 
-
-        #layout{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        hr {
-            border: 3px solid #22A39F;
-            margin: 10px 0;
-            border-radius: 3px;
-            width: 80%;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #222222;
-        }
-
-        .position-label {
-            position: absolute;
-            white-space: nowrap;
-            transform: translateX(-50%);
-            top: 30px;
-        }
-
-        .slider-container {
-            width: 50%;
-            margin: 15px auto;
-            position: relative;
-        }
-
-        .slider-container input {
-            width: 100%; /* Full width for the input within the slider container */
-        }
-
-        .slider-container .slider::-moz-range-thumb {
-            width: 13px;
-            height: 13px;
-            background: #22A39F;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .slider-container .slider::-moz-range-track {
-            background: #222222;
-            height: 10px;
-            border-radius: 5px;
-        }
-
-        /* WebKit (Chrome, Safari) */
-        .slider-container .slider::-webkit-slider-thumb {
-            width: 13px;
-            height: 13px;
-            background: #22A39F;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .slider-container .slider::-webkit-slider-runnable-track {
-            background: #222222;
-            height: 10px;
-            border-radius: 5px;
-        }
-
-        /* Standard (Opera, Edge, etc.) */
-        .slider-container .slider::-ms-thumb {
-            width: 13px;
-            height: 13px;
-            background: #22A39F;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .slider-container .slider::-ms-track {
-            background: #222222;
-            height: 10px;
-            border-radius: 5px;
-        }
-
-        .data {
-            text-align: right;
-            width: 120%;
-            margin: 4px auto; /* Added margin for spacing between text inputs */
-            
-        }
-
-        .data-container {
-            display: flex;
-            align-items: center;
-            width: 55%;
-        }
-
-        .data-label {
-            flex: 1;
-            margin-right: 12px;
-            text-align: left; 
-         }
-
-        /* Added styles for better alignment */
-        .data-container label {
-            min-width: 150px; /* Set a minimum width for labels to align properly */
-        }
-        
-        
-    </style>
-</head>
 <body>
+    <div class="container">
+        <div class="heading-box">
+            <h1 class="custom-title">Data Tables</h1>
+            <h2 class="custom-sub-title"> Whole Numbers</h2>
+           
+        </div>
+        <hr>
+    </div>
 
     <div id="layout">
-        <h1>Base Converter</h1>
-        <h2>Whole Numbers</h2>
-
-        <hr>
+        
 
         <div class="slider-container" data-min="0" data-max="2">
             <div class="position-label" style="left: 0%; top: 20px;">Signed</div>
@@ -153,8 +46,15 @@
         </div>
     
         <div class="spacer"></div>
-        <h2>Floating Point</h2>
-        <hr>
+        </div>
+        <div class="container">
+            <div class="heading-box">
+                <h2 class="custom-sub-title"> Floating Point</h2>
+            </div>
+            <hr>
+        </div>
+        <div id="layout">
+        
 
         <div class="slider-container" data-min="0" data-max="1">
             <div class="position-label" style="left: 0%; top: 20px;">Binary</div>
@@ -180,9 +80,7 @@
     </div>
 
     <script>
-        
 
-        
         function updateFromDecimal() {
             const decimalValue = parseInt(document.getElementById('decimalInput').value, 10);
 
