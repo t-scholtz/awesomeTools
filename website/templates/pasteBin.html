@@ -4,58 +4,118 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pasteBin.css') }}">
-<script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.11.0/css/bulma.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
 
-<!-- Simple List -->
-<div id="simpleList" class="content">
-  <div class="box">
-    <p>This is <a href="http://rubaxa.github.io/Sortable/">Sortable</a></p>
-  </div>
-  <div class="box">
-    <p>It works with Bulma...</p>
-  </div>
-  <div class="box">
-    <p>...out of the box.</p>
-  </div>
-  <div class="box">
-    <p>It has support for touch devices.</p>
-  </div>
-  <div class="box">
-    <p>Just drag some elements around.</p>
-  </div>
+<style>
+.button .fa {
+  margin-right: 5px;
+}
+</style>
+
+<div style="width: 90%; margin: 0 auto;">
+  <button id="addItemBtn" class="button is-primary" style="display: block; margin: 20px auto; padding: 15px 20px; text-align: center; font-weight: bold; display: flex; justify-content: center; align-items: center;width: 50%;">New Paste Bin</button>
+  <hr style="width: 100%;">
+  <div id="pasteBinList" class="content"></div>
 </div>
 
-<!-- List with handle -->
-<div id="listWithHandle" class="content">
-  <div class="box">
-    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 1
-  </div>
-  <div class="box">
-    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 2
-  </div>
-  <div class="box">
-    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 3
-  </div>
-  <div class="box">
-    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 4
-  </div>
-  <div class="box">
-    <span class="icon is-small"><i class="fas fa-arrows-alt"></i></span> Item 5
-  </div>
-</div>
 
 <script>
-  Sortable.create(simpleList, { /* options */ });
-
-  // List with handle
-  Sortable.create(listWithHandle, {
+  Sortable.create(pasteBinList, {
     handle: '.icon',
     animation: 150
   });
+
+  document.getElementById('addItemBtn').addEventListener('click', function() {
+    addNewItem();
+  });
+
+  function addNewItem() {
+  var newItem = document.createElement('div');
+  newItem.className = 'box';
+  newItem.innerHTML = `
+    <div style="display: flex; align-items: flex-start;">
+      <span class="icon is-large" style="margin-right: 8px;"><i class="fa fa-arrows"></i></span>
+      <div style="flex-grow: 1;">
+        <textarea id="freeform" name="freeform" rows="4" style="width: 100%;resize: vertical;" tabindex="-1"></textarea>
+        <div style="background-color: lightblue; padding: 10px; margin-top: 10px; border-radius: 5px;">
+          <button class="button is-primary is-dark spellCheckBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Spell Check</button>
+          <button class="button is-link is-dark spellCheckBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Spell Check</button>
+          <button class="button is-white whiteSpaceBtn"><i class="fa fa-adjust" aria-hidden="true"></i> Remove Whitespace</button>
+          <button class="button is-warning is-dark copyBtn"><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>
+        </div>
+      </div>
+    </div>
+  `;
+    pasteBinList.appendChild(newItem);
+
+    // Add event listener for the newly created button
+    newItem.querySelector('.spellCheckBtn').addEventListener('click', function() {
+      var text = newItem.querySelector('textarea').value;
+      fetch('/spell_Check', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({text: text})
+      })
+      .then(response => response.json())
+      .then(data => {
+          newItem.querySelector('textarea').value = data.formatted_text;
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+    });
+
+    newItem.querySelector('textarea').addEventListener('keydown', keyHandler);
+
+
+    newItem.querySelector('.whiteSpaceBtn').addEventListener('click', function() {
+      var text = newItem.querySelector('textarea').value;
+      fetch('/white_space', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({text: text})
+      })
+      .then(response => response.json())
+      .then(data => {
+          newItem.querySelector('textarea').value = data.formatted_text;
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+    });
+
+    newItem.querySelector('.copyBtn').addEventListener('click', function() {
+    var text = newItem.querySelector('textarea').value;
+    navigator.clipboard.writeText(text)
+    });
+  }
+  function keyHandler(e) {
+  var TABKEY = 9;
+  if (e.keyCode == TABKEY) {
+    var textarea = e.target;
+    var start = textarea.selectionStart;
+    var end = textarea.selectionEnd;
+
+    // Insert tab at the caret position
+    textarea.value = textarea.value.substring(0, start) + "\t" + textarea.value.substring(end);
+
+    // Move the caret position forward
+    textarea.selectionStart = textarea.selectionEnd = start + 1;
+
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+    return false;
+  }
+}
+  
+
+  // Trigger the function on page load
+  addNewItem();
 </script>
 
 {% endblock %}
-
-

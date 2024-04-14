@@ -15,6 +15,10 @@ def home():
 def textEditor():
     return render_template("textEditor.html")
 
+@views.route('/codeFlow', methods=['GET', 'POST'])
+def codeFlow():
+    return render_template("codeFlow.html")
+
 @views.route('/encondingTable', methods=['GET', 'POST'])
 def encondingTable():
     return render_template("encondingTable.html")

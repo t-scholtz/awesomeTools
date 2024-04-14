@@ -71,9 +71,11 @@ def autoDetect(input):
 @pasteBin.route('/spell_Check', methods=['POST'])
 def SpellCheck():
      # Receive data from the client (JavaScript)
+    
     data = request.json
     text = data.get('text')
     spell = SpellChecker()
+    print(text)
     # Split the text into words
     words = text.split()
     # Get misspelled words
@@ -93,3 +95,15 @@ def SpellCheck():
 
     # Return formatted text to the client (JavaScript)
     return jsonify({'formatted_text': corrected_text})
+
+@pasteBin.route('/white_space', methods=['POST'])
+def whiteSpace():
+    data = request.json
+    text = data.get('text')
+    output = re.sub(r"\s+", "", text)
+    return jsonify({'formatted_text': output})
+
+@pasteBin.route('/copy', methods=['POST'])
+def copy():
+    data = request.json
+    text = data.get('text')

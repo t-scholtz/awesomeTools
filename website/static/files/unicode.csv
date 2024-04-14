@@ -1,128 +1,1873 @@
-Decimal,Hex,Char,Description,
-1,1,SOH,Start of Heading,
-2,2,STX,Start of Text,
-3,3,ETX,End of Text,
-4,4,EOT,End of Transmission,
-5,5,ENQ,Enquiry,
-6,6,ACK,Acknowledge,
-7,7,BEL,Bell,
-8,8,BS,Backspace,
-9,9,HT,Horizontal Tab,
-10,0A,LF,"NL Line Feed, New Line",
-11,0B,VT,Vertical Tab,
-12,0C,FF,"NP Form Feed, New Page",
-13,0D,CR,Carriage Return,
-14,0E,SO,Shift Out,
-15,0F,SI,Shift In,
-16,10,DLE,Data Link Escape,
-17,11,DC1,Device Control 1,
-18,12,DC2,Device Control 2,
-19,13,DC3,Device Control 3,
-20,14,DC4,Device Control 4,
-21,15,NAK,Negative Acknowledge,
-22,16,SYN,Synchronous Idle,
-23,17,ETB,End of Transmission Block,
-24,18,CAN,Cancel,
-25,19,EM,End of Medium,
-26,1A,SUB,Substitute,
-27,1B,ESC,Escape,
-28,1C,FS,File Separator,
-29,1D,GS,Group Separator,
-30,1E,RS,Record Separator,
-31,1F,US,Unit Separator,
-32,20,(Space),Space,
-33,21,!,Exclamation Mark,
-34,22,""",Double Quote,
-35,23,#,Hash or Number,
-36,24,$,Dollar Sign,
-37,25,%,Percentage,
-38,26,&,Ampersand,
-39,27,',Single Quote,
-40,28,(,Left Parenthesis,
-41,29,),Right Parenthesis,
-42,2A,*,Asterisk,
-43,2B,+,Plus Sign,
-44,2C,",",Comma,
-45,2D,-,Minus Sign,
-46,2E,.,Period,
-47,2F,/,Slash,
-48,30,0,Zero,
-49,31,1,Number One,
-50,32,2,Number Two,
-51,33,3,Number Three,
-52,34,4,Number Four,
-53,35,5,Number Five,
-54,36,6,Number Six,
-55,37,7,Number Seven,
-56,38,8,Number Eight,
-57,39,9,Number Nine,
-58,3A,:,Colon,
-59,3B,;,Semicolon,
-60,3C,<,Less Than,&lt,
-61,3D,=,Equals Sign,&equals,
-62,3E,>,Greater Than,
-63,3F,?,Question Mark,
-64,40,@,At Sign,
-65,41,A,Upper Case Letter A,
-66,42,B,Upper Case Letter B,
-67,43,C,Upper Case Letter C,
-68,44,D,Upper Case Letter D,
-69,45,E,Upper Case Letter E,
-70,46,F,Upper Case Letter F,
-71,47,G,Upper Case Letter G,
-72,48,H,Upper Case Letter H,
-73,49,I,Upper Case Letter I,
-74,4A,J,Upper Case Letter J,
-75,4B,K,Upper Case Letter K,
-76,4C,L,Upper Case Letter L,
-77,4D,M,Upper Case Letter M,
-78,4E,N,Upper Case Letter N,
-79,4F,O,Upper Case Letter O,
-80,50,P,Upper Case Letter P,
-81,51,Q,Upper Case Letter Q,
-82,52,R,Upper Case Letter R,
-83,53,S,Upper Case Letter S,
-84,54,T,Upper Case Letter T,
-85,55,U,Upper Case Letter U,
-86,56,V,Upper Case Letter V,
-87,57,W,Upper Case Letter W,
-88,58,X,Upper Case Letter X,
-89,59,Y,Upper Case Letter Y,
-90,5A,Z,Upper Case Letter Z,
-91,5B,[,Left Square Bracket,
-92,5C,\,Backslash,
-93,5D,],Right Square Bracket,
-94,5E,^,Caret or Circumflex,
-95,5F,_,Underscore,
-96,60,`,Grave Accent,
-97,61,a,Lower Case Letter a,
-98,62,b,Lower Case Letter b,
-99,63,c,Lower Case Letter c,
-100,64,d,Lower Case Letter d,
-101,65,e,Lower Case Letter e,
-102,66,f,Lower Case Letter f,
-103,67,g,Lower Case Letter g,
-104,68,h,Lower Case Letter h,
-105,69,i,Lower Case Letter i,
-106,6A,j,Lower Case Letter j,
-107,6B,k,Lower Case Letter k,
-108,6C,l,Lower Case Letter l,
-109,6D,m,Lower Case Letter m,
-110,6E,n,Lower Case Letter n,
-111,6F,o,Lower Case Letter o,
-112,70,p,Lower Case Letter p,
-113,71,q,Lower Case Letter q,
-114,72,r,Lower Case Letter r,
-115,73,s,Lower Case Letter s,
-116,74,t,Lower Case Letter t,
-117,75,u,Lower Case Letter u,
-118,76,v,Lower Case Letter v,
-119,77,w,Lower Case Letter w,
-120,78,x,Lower Case Letter x,
-121,79,y,Lower Case Letter y,
-122,7A,z,Lower Case Letter z,
-123,7B,{,Left Curly Bracket,
-124,7C,|,Vertical Bar,
-125,7D,},Right Curly Bracket,
-126,7E,~,Tilde,
-127,7F,DEL,Delete,
+Code,Decimal,Description,Abbreviation / Key
+U+0000,0,Null character,NUL
+U+0001,1,Start of Heading,SOH / Ctrl-A
+U+0002,2,Start of Text,STX / Ctrl-B
+U+0003,3,End-of-text character,ETX / Ctrl-C1
+U+0004,4,End-of-transmission character,EOT / Ctrl-D2
+U+0005,5,Enquiry character,ENQ / Ctrl-E
+U+0006,6,Acknowledge character,ACK / Ctrl-F
+U+0007,7,Bell character,BEL / Ctrl-G3
+U+0008,8,Backspace,BS / Ctrl-H
+U+0009,9,Horizontal tab,HT / Ctrl-I
+U+000A,10,Line feed,LF / Ctrl-J4
+U+000B,11,Vertical tab,VT / Ctrl-K
+U+000C,12,Form feed,FF / Ctrl-L
+U+000D,13,Carriage return,CR / Ctrl-M5
+U+000E,14,Shift Out,SO / Ctrl-N
+U+000F,15,Shift In,SI / Ctrl-O6
+U+0010,16,Data Link Escape,DLE / Ctrl-P
+U+0011,17,Device Control 1,DC1 / Ctrl-Q7
+U+0012,18,Device Control 2,DC2 / Ctrl-R
+U+0013,19,Device Control 3,DC3 / Ctrl-S8
+U+0014,20,Device Control 4,DC4 / Ctrl-T
+U+0015,21,Negative-acknowledge character,NAK / Ctrl-U9
+U+0016,22,Synchronous Idle,SYN / Ctrl-V
+U+0017,23,End of Transmission Block,ETB / Ctrl-W
+U+0018,24,Cancel character,CAN / Ctrl-X10
+U+0019,25,End of Medium,EM / Ctrl-Y
+U+001A,26,Substitute character,SUB / Ctrl-Z11
+U+001B,27,Escape character,ESC
+U+001C,28,File Separator,FS
+U+001D,29,Group Separator,GS
+U+001E,30,Record Separator,RS
+U+001F,31,Unit Separator,US
+U+007F,127,Delete,DEL
+U+0080,128,Padding Character,PAD
+U+0081,129,High Octet Preset,HOP
+U+0082,130,Break Permitted Here,BPH
+U+0083,131,No Break Here,NBH
+U+0084,132,Index,IND
+U+0085,133,Next Line,NEL
+U+0086,134,Start of Selected Area,SSA
+U+0087,135,End of Selected Area,ESA
+U+0088,136,Character Tabulation Set,HTS
+U+0089,137,Character Tabulation with Justification,HTJ
+U+008A,138,Line Tabulation Set,VTS
+U+008B,139,Partial Line Forward,PLD
+U+008C,140,Partial Line Backward,PLU
+U+008D,141,Reverse Line Feed,RI
+U+008E,142,Single-Shift Two,SS2
+U+008F,143,Single-Shift Three,SS3
+U+0090,144,Device Control String,DCS
+U+0091,145,Private Use 1,PU1
+U+0092,146,Private Use 2,PU2
+U+0093,147,Set Transmit State,STS
+U+0094,148,Cancel character,CCH
+U+0095,149,Message Waiting,MW
+U+0096,150,Start of Protected Area,SPA
+U+0097,151,End of Protected Area,EPA
+U+0098,152,Start of String,SOS
+U+0099,153,Single Graphic Character Introducer,SGCI
+U+009A,154,Single Character Intro Introducer,SCI
+U+009B,155,Control Sequence Introducer,CSI
+U+009C,156,String Terminator,ST
+U+009D,157,Operating System Command,OSC
+U+009E,158,Private Message,PM
+U+009F,159,Application Program Command,
+U+0020,32,Space,
+U+0021,33,Exclamation mark,!
+U+0022,34,Quotation mark,""""
+U+0023,35,"Number sign, Hash, Octothorpe, Sharp",#
+U+0024,36,Dollar sign,$
+U+0025,37,Percent sign,%
+U+0026,38,Ampersand,&
+U+0027,39,Apostrophe,
+U+0028,40,Left parenthesis,(
+U+0029,41,Right parenthesis,)
+U+002A,42,Asterisk,*
+U+002B,43,Plus sign,#ERROR!
+U+002C,44,Comma,","
+U+002D,45,Hyphen-minus,-
+U+002E,46,Full stop,.
+U+002F,47,Slash (Solidus),/
+U+0030,48,Digit Zero,0
+U+0031,49,Digit One,1
+U+0032,50,Digit Two,2
+U+0033,51,Digit Three,3
+U+0034,52,Digit Four,4
+U+0035,53,Digit Five,5
+U+0036,54,Digit Six,6
+U+0037,55,Digit Seven,7
+U+0038,56,Digit Eight,8
+U+0039,57,Digit Nine,9
+U+003A,58,Colon,:
+U+003B,59,Semicolon,;
+U+003C,60,Less-than sign,<
+U+003D,61,Equal sign,#ERROR!
+U+003E,62,Greater-than sign,>
+U+003F,63,Question mark,?
+U+0040,64,At sign,@
+U+0041,65,Latin Capital letter A,A
+U+0042,66,Latin Capital letter B,B
+U+0043,67,Latin Capital letter C,C
+U+0044,68,Latin Capital letter D,D
+U+0045,69,Latin Capital letter E,E
+U+0046,70,Latin Capital letter F,F
+U+0047,71,Latin Capital letter G,G
+U+0048,72,Latin Capital letter H,H
+U+0049,73,Latin Capital letter I,I
+U+004A,74,Latin Capital letter J,J
+U+004B,75,Latin Capital letter K,K
+U+004C,76,Latin Capital letter L,L
+U+004D,77,Latin Capital letter M,M
+U+004E,78,Latin Capital letter N,N
+U+004F,79,Latin Capital letter O,O
+U+0050,80,Latin Capital letter P,P
+U+0051,81,Latin Capital letter Q,Q
+U+0052,82,Latin Capital letter R,R
+U+0053,83,Latin Capital letter S,S
+U+0054,84,Latin Capital letter T,T
+U+0055,85,Latin Capital letter U,U
+U+0056,86,Latin Capital letter V,V
+U+0057,87,Latin Capital letter W,W
+U+0058,88,Latin Capital letter X,X
+U+0059,89,Latin Capital letter Y,Y
+U+005A,90,Latin Capital letter Z,Z
+U+005B,91,Left square bracket,[
+U+005C,92,Backslash,\
+U+005D,93,Right square bracket,]
+U+005E,94,Circumflex accent,^
+U+005F,95,Low line,_
+U+0060,96,Grave accent,`
+U+0061,97,Latin Small Letter A,a
+U+0062,98,Latin Small Letter B,b
+U+0063,99,Latin Small Letter C,c
+U+0064,100,Latin Small Letter D,d
+U+0065,101,Latin Small Letter E,e
+U+0066,102,Latin Small Letter F,f
+U+0067,103,Latin Small Letter G,g
+U+0068,104,Latin Small Letter H,h
+U+0069,105,Latin Small Letter I,i
+U+006A,106,Latin Small Letter J,j
+U+006B,107,Latin Small Letter K,k
+U+006C,108,Latin Small Letter L,l
+U+006D,109,Latin Small Letter M,m
+U+006E,110,Latin Small Letter N,n
+U+006F,111,Latin Small Letter O,o
+U+0070,112,Latin Small Letter P,p
+U+0071,113,Latin Small Letter Q,q
+U+0072,114,Latin Small Letter R,r
+U+0073,115,Latin Small Letter S,s
+U+0074,116,Latin Small Letter T,t
+U+0075,117,Latin Small Letter U,u
+U+0076,118,Latin Small Letter V,v
+U+0077,119,Latin Small Letter W,w
+U+0078,120,Latin Small Letter X,x
+U+0079,121,Latin Small Letter Y,y
+U+007A,122,Latin Small Letter Z,z
+U+007B,123,Left curly bracket,{
+U+007C,124,Vertical bar,|
+U+007D,125,Right curly bracket,}
+U+007E,126,Tilde,~
+U+00A0,160,Non-breaking space,
+U+00A1,161,Inverted Exclamation Mark,¡
+U+00A2,162,Cent sign,¢
+U+00A3,163,Pound sign,£
+U+00A4,164,Currency sign,¤
+U+00A5,165,Yen sign,¥
+U+00A6,166,Broken bar,¦
+U+00A7,167,Section sign,§
+U+00A8,168,Diaeresis (Umlaut),¨
+U+00A9,169,Copyright symbol,©
+U+00AA,170,Feminine Ordinal Indicator,ª
+U+00AB,171,Left-pointing double angle quotation mark,«
+U+00AC,172,Not sign,¬
+U+00AD,173,Soft hyphen,
+U+00AE,174,Registered trademark symbol,®
+U+00AF,175,Macron,¯
+U+00B0,176,Degree sign,°
+U+00B1,177,Plus–minus sign,±
+U+00B2,178,Superscript two,²
+U+00B3,179,Superscript three,³
+U+00B4,180,Acute accent,´
+U+00B5,181,Micro sign,µ
+U+00B6,182,Pilcrow sign,¶
+U+00B7,183,Middle dot,·
+U+00B8,184,Cedilla,¸
+U+00B9,185,Superscript one,¹
+U+00BA,186,Masculine ordinal indicator,º
+U+00BB,187,Right-pointing double angle quotation mark,»
+U+00BC,188,Vulgar fraction one quarter,¼
+U+00BD,189,Vulgar fraction one half,½
+U+00BE,190,Vulgar fraction three quarters,¾
+U+00BF,191,Inverted Question Mark,¿
+U+00C0,192,Latin Capital Letter A with grave,À
+U+00C1,193,Latin Capital letter A with acute,Á
+U+00C2,194,Latin Capital letter A with circumflex,Â
+U+00C3,195,Latin Capital letter A with tilde,Ã
+U+00C4,196,Latin Capital letter A with diaeresis,Ä
+U+00C5,197,Latin Capital letter A with ring above,Å
+U+00C6,198,Latin Capital letter Æ,Æ
+U+00C7,199,Latin Capital letter C with cedilla,Ç
+U+00C8,200,Latin Capital letter E with grave,È
+U+00C9,201,Latin Capital letter E with acute,É
+U+00CA,202,Latin Capital letter E with circumflex,Ê
+U+00CB,203,Latin Capital letter E with diaeresis,Ë
+U+00CC,204,Latin Capital letter I with grave,Ì
+U+00CD,205,Latin Capital letter I with acute,Í
+U+00CE,206,Latin Capital letter I with circumflex,Î
+U+00CF,207,Latin Capital letter I with diaeresis,Ï
+U+00D0,208,Latin Capital letter Eth,Ð
+U+00D1,209,Latin Capital letter N with tilde,Ñ
+U+00D2,210,Latin Capital letter O with grave,Ò
+U+00D3,211,Latin Capital letter O with acute,Ó
+U+00D4,212,Latin Capital letter O with circumflex,Ô
+U+00D5,213,Latin Capital letter O with tilde,Õ
+U+00D6,214,Latin Capital letter O with diaeresis,Ö
+U+00D7,215,Multiplication sign,×
+U+00D8,216,Latin Capital letter O with stroke,Ø
+U+00D9,217,Latin Capital letter U with grave,Ù
+U+00DA,218,Latin Capital letter U with acute,Ú
+U+00DB,219,Latin Capital Letter U with circumflex,Û
+U+00DC,220,Latin Capital Letter U with diaeresis,Ü
+U+00DD,221,Latin Capital Letter Y with acute,Ý
+U+00DE,222,Latin Capital Letter Thorn,Þ
+U+00DF,223,Latin Small Letter sharp S,ß
+U+00E0,224,Latin Small Letter A with grave,à
+U+00E1,225,Latin Small Letter A with acute,á
+U+00E2,226,Latin Small Letter A with circumflex,â
+U+00E3,227,Latin Small Letter A with tilde,ã
+U+00E4,228,Latin Small Letter A with diaeresis,ä
+U+00E5,229,Latin Small Letter A with ring above,å
+U+00E6,230,Latin Small Letter Æ,æ
+U+00E7,231,Latin Small Letter C with cedilla,ç
+U+00E8,232,Latin Small Letter E with grave,è
+U+00E9,233,Latin Small Letter E with acute,é
+U+00EA,234,Latin Small Letter E with circumflex,ê
+U+00EB,235,Latin Small Letter E with diaeresis,ë
+U+00EC,236,Latin Small Letter I with grave,ì
+U+00ED,237,Latin Small Letter I with acute,í
+U+00EE,238,Latin Small Letter I with circumflex,î
+U+00EF,239,Latin Small Letter I with diaeresis,ï
+U+00F0,240,Latin Small Letter Eth,ð
+U+00F1,241,Latin Small Letter N with tilde,ñ
+U+00F2,242,Latin Small Letter O with grave,ò
+U+00F3,243,Latin Small Letter O with acute,ó
+U+00F4,244,Latin Small Letter O with circumflex,ô
+U+00F5,245,Latin Small Letter O with tilde,õ
+U+00F6,246,Latin Small Letter O with diaeresis,ö
+U+00F7,247,Division sign,÷
+U+00F8,248,Latin Small Letter O with stroke,ø
+U+00F9,249,Latin Small Letter U with grave,ù
+U+00FA,250,Latin Small Letter U with acute,ú
+U+00FB,251,Latin Small Letter U with circumflex,û
+U+00FC,252,Latin Small Letter U with diaeresis,ü
+U+00FD,253,Latin Small Letter Y with acute,ý
+U+00FE,254,Latin Small Letter Thorn,þ
+U+00FF,255,Latin Small Letter Y with diaeresis,ÿ
+U+0100,256,Latin Capital Letter A with macron,Ā
+U+0101,257,Latin Small Letter A with macron,ā
+U+0102,258,Latin Capital Letter A with breve,Ă
+U+0103,259,Latin Small Letter A with breve,ă
+U+0104,260,Latin Capital Letter A with ogonek,Ą
+U+0105,261,Latin Small Letter A with ogonek,ą
+U+0106,262,Latin Capital Letter C with acute,Ć
+U+0107,263,Latin Small Letter C with acute,ć
+U+0108,264,Latin Capital Letter C with circumflex,Ĉ
+U+0109,265,Latin Small Letter C with circumflex,ĉ
+U+010A,266,Latin Capital Letter C with dot above,Ċ
+U+010B,267,Latin Small Letter C with dot above,ċ
+U+010C,268,Latin Capital Letter C with caron,Č
+U+010D,269,Latin Small Letter C with caron,č
+U+010E,270,Latin Capital Letter D with caron,Ď
+U+010F,271,Latin Small Letter D with caron,ď
+U+0110,272,Latin Capital Letter D with stroke,Đ
+U+0111,273,Latin Small Letter D with stroke,đ
+U+0112,274,Latin Capital Letter E with macron,Ē
+U+0113,275,Latin Small Letter E with macron,ē
+U+0114,276,Latin Capital Letter E with breve,Ĕ
+U+0115,277,Latin Small Letter E with breve,ĕ
+U+0116,278,Latin Capital Letter E with dot above,Ė
+U+0117,279,Latin Small Letter E with dot above,ė
+U+0118,280,Latin Capital Letter E with ogonek,Ę
+U+0119,281,Latin Small Letter E with ogonek,ę
+U+011A,282,Latin Capital Letter E with caron,Ě
+U+011B,283,Latin Small Letter E with caron,ě
+U+011C,284,Latin Capital Letter G with circumflex,Ĝ
+U+011D,285,Latin Small Letter G with circumflex,ĝ
+U+011E,286,Latin Capital Letter G with breve,Ğ
+U+011F,287,Latin Small Letter G with breve,ğ
+U+0120,288,Latin Capital Letter G with dot above,Ġ
+U+0121,289,Latin Small Letter G with dot above,ġ
+U+0122,290,Latin Capital Letter G with cedilla,Ģ
+U+0123,291,Latin Small Letter G with cedilla,ģ
+U+0124,292,Latin Capital Letter H with circumflex,Ĥ
+U+0125,293,Latin Small Letter H with circumflex,ĥ
+U+0126,294,Latin Capital Letter H with stroke,Ħ
+U+0127,295,Latin Small Letter H with stroke,ħ
+U+0128,296,Latin Capital Letter I with tilde,Ĩ
+U+0129,297,Latin Small Letter I with tilde,ĩ
+U+012A,298,Latin Capital Letter I with macron,Ī
+U+012B,299,Latin Small Letter I with macron,ī
+U+012C,300,Latin Capital Letter I with breve,Ĭ
+U+012D,301,Latin Small Letter I with breve,ĭ
+U+012E,302,Latin Capital Letter I with ogonek,Į
+U+012F,303,Latin Small Letter I with ogonek,į
+U+0130,304,Latin Capital Letter I with dot above,İ
+U+0131,305,Latin Small Letter dotless I,ı
+U+0132,306,Latin Capital Ligature IJ,Ĳ
+U+0133,307,Latin Small Ligature IJ,ĳ
+U+0134,308,Latin Capital Letter J with circumflex,Ĵ
+U+0135,309,Latin Small Letter J with circumflex,ĵ
+U+0136,310,Latin Capital Letter K with cedilla,Ķ
+U+0137,311,Latin Small Letter K with cedilla,ķ
+U+0138,312,Latin Small Letter Kra,ĸ
+U+0139,313,Latin Capital Letter L with acute,Ĺ
+U+013A,314,Latin Small Letter L with acute,ĺ
+U+013B,315,Latin Capital Letter L with cedilla,Ļ
+U+013C,316,Latin Small Letter L with cedilla,ļ
+U+013D,317,Latin Capital Letter L with caron,Ľ
+U+013E,318,Latin Small Letter L with caron,ľ
+U+013F,319,Latin Capital Letter L with middle dot,Ŀ
+U+0140,320,Latin Small Letter L with middle dot,ŀ
+U+0141,321,Latin Capital Letter L with stroke,Ł
+U+0142,322,Latin Small Letter L with stroke,ł
+U+0143,323,Latin Capital Letter N with acute,Ń
+U+0144,324,Latin Small Letter N with acute,ń
+U+0145,325,Latin Capital Letter N with cedilla,Ņ
+U+0146,326,Latin Small Letter N with cedilla,ņ
+U+0147,327,Latin Capital Letter N with caron,Ň
+U+0148,328,Latin Small Letter N with caron,ň
+U+0149,329,Latin Small Letter N preceded by apostrophe[2],ŉ
+U+014A,330,Latin Capital Letter Eng,Ŋ
+U+014B,331,Latin Small Letter Eng,ŋ
+U+014C,332,Latin Capital Letter O with macron,Ō
+U+014D,333,Latin Small Letter O with macron,ō
+U+014E,334,Latin Capital Letter O with breve,Ŏ
+U+014F,335,Latin Small Letter O with breve,ŏ
+U+0150,336,Latin Capital Letter O with double acute,Ő
+U+0151,337,Latin Small Letter O with double acute,ő
+U+0152,338,Latin Capital Ligature OE,Œ
+U+0153,339,Latin Small Ligature OE,œ
+U+0154,340,Latin Capital Letter R with acute,Ŕ
+U+0155,341,Latin Small Letter R with acute,ŕ
+U+0156,342,Latin Capital Letter R with cedilla,Ŗ
+U+0157,343,Latin Small Letter R with cedilla,ŗ
+U+0158,344,Latin Capital Letter R with caron,Ř
+U+0159,345,Latin Small Letter R with caron,ř
+U+015A,346,Latin Capital Letter S with acute,Ś
+U+015B,347,Latin Small Letter S with acute,ś
+U+015C,348,Latin Capital Letter S with circumflex,Ŝ
+U+015D,349,Latin Small Letter S with circumflex,ŝ
+U+015E,350,Latin Capital Letter S with cedilla,Ş
+U+015F,351,Latin Small Letter S with cedilla,ş
+U+0160,352,Latin Capital Letter S with caron,Š
+U+0161,353,Latin Small Letter S with caron,š
+U+0162,354,Latin Capital Letter T with cedilla,Ţ
+U+0163,355,Latin Small Letter T with cedilla,ţ
+U+0164,356,Latin Capital Letter T with caron,Ť
+U+0165,357,Latin Small Letter T with caron,ť
+U+0166,358,Latin Capital Letter T with stroke,Ŧ
+U+0167,359,Latin Small Letter T with stroke,ŧ
+U+0168,360,Latin Capital Letter U with tilde,Ũ
+U+0169,361,Latin Small Letter U with tilde,ũ
+U+016A,362,Latin Capital Letter U with macron,Ū
+U+016B,363,Latin Small Letter U with macron,ū
+U+016C,364,Latin Capital Letter U with breve,Ŭ
+U+016D,365,Latin Small Letter U with breve,ŭ
+U+016E,366,Latin Capital Letter U with ring above,Ů
+U+016F,367,Latin Small Letter U with ring above,ů
+U+0170,368,Latin Capital Letter U with double acute,Ű
+U+0171,369,Latin Small Letter U with double acute,ű
+U+0172,370,Latin Capital Letter U with ogonek,Ų
+U+0173,371,Latin Small Letter U with ogonek,ų
+U+0174,372,Latin Capital Letter W with circumflex,Ŵ
+U+0175,373,Latin Small Letter W with circumflex,ŵ
+U+0176,374,Latin Capital Letter Y with circumflex,Ŷ
+U+0177,375,Latin Small Letter Y with circumflex,ŷ
+U+0178,376,Latin Capital Letter Y with diaeresis,Ÿ
+U+0179,377,Latin Capital Letter Z with acute,Ź
+U+017A,378,Latin Small Letter Z with acute,ź
+U+017B,379,Latin Capital Letter Z with dot above,Ż
+U+017C,380,Latin Small Letter Z with dot above,ż
+U+017D,381,Latin Capital Letter Z with caron,Ž
+U+017E,382,Latin Small Letter Z with caron,ž
+U+017F,383,Latin Small Letter long S,ſ
+U+0180,384,Latin Small Letter B with stroke,ƀ
+U+0181,385,Latin Capital Letter B with hook,Ɓ
+U+0182,386,Latin Capital Letter B with top bar,Ƃ
+U+0183,387,Latin Small Letter B with top bar,ƃ
+U+0184,388,Latin Capital Letter Tone Six,Ƅ
+U+0185,389,Latin Small Letter Tone Six,ƅ
+U+0186,390,Latin Capital Letter Open O,Ɔ
+U+0187,391,Latin Capital Letter C with hook,Ƈ
+U+0188,392,Latin Small Letter C with hook,ƈ
+U+0189,393,Latin Capital Letter African D,Ɖ
+U+018A,394,Latin Capital Letter D with hook,Ɗ
+U+018B,395,Latin Capital Letter D with top bar,Ƌ
+U+018C,396,Latin Small Letter D with top bar,ƌ
+U+018D,397,Latin Small Letter Turned Delta,ƍ
+U+018E,398,Latin Capital Letter Reversed E,Ǝ
+U+018F,399,Latin Capital Letter Schwa,Ə
+U+0190,400,Latin Capital Letter Open E,Ɛ
+U+0191,401,Latin Capital Letter F with hook,Ƒ
+U+0192,402,Latin Small Letter F with hook,ƒ
+U+0193,403,Latin Capital Letter G with hook,Ɠ
+U+0194,404,Latin Capital Letter Gamma,Ɣ
+U+0195,405,Latin Small Letter HV,ƕ
+U+0196,406,Latin Capital Letter Iota,Ɩ
+U+0197,407,Latin Capital Letter I with stroke,Ɨ
+U+0198,408,Latin Capital Letter K with hook,Ƙ
+U+0199,409,Latin Small Letter K with hook,ƙ
+U+019A,410,Latin Small Letter L with bar,ƚ
+U+019B,411,Latin Small Letter Lambda with stroke,ƛ
+U+019C,412,Latin Capital Letter Turned M,Ɯ
+U+019D,413,Latin Capital Letter N with left hook,Ɲ
+U+019E,414,Latin Small Letter N with long right leg,ƞ
+U+019F,415,Latin Capital Letter O with middle tilde,Ɵ
+U+01A0,416,Latin Capital Letter O with horn,Ơ
+U+01A1,417,Latin Small Letter O with horn,ơ
+U+01A2,418,Latin Capital Letter OI (= Latin Capital Letter Gha),Ƣ
+U+01A3,419,Latin Small Letter OI (= Latin Small Letter Gha),ƣ
+U+01A4,420,Latin Capital Letter P with hook,Ƥ
+U+01A5,421,Latin Small Letter P with hook,ƥ
+U+01A6,422,Latin Letter YR,Ʀ
+U+01A7,423,Latin Capital Letter Tone Two,Ƨ
+U+01A8,424,Latin Small Letter Tone Two,ƨ
+U+01A9,425,Latin Capital Letter Esh,Ʃ
+U+01AA,426,Latin Letter Reversed Esh Loop,ƪ
+U+01AB,427,Latin Small Letter T with palatal hook,ƫ
+U+01AC,428,Latin Capital Letter T with hook,Ƭ
+U+01AD,429,Latin Small Letter T with hook,ƭ
+U+01AE,430,Latin Capital Letter T with retroflex hook,Ʈ
+U+01AF,431,Latin Capital Letter U with horn,Ư
+U+01B0,432,Latin Small Letter U with horn,ư
+U+01B1,433,Latin Capital Letter Upsilon,Ʊ
+U+01B2,434,Latin Capital Letter V with hook,Ʋ
+U+01B3,435,Latin Capital Letter Y with hook,Ƴ
+U+01B4,436,Latin Small Letter Y with hook,ƴ
+U+01B5,437,Latin Capital Letter Z with stroke,Ƶ
+U+01B6,438,Latin Small Letter Z with stroke,ƶ
+U+01B7,439,Latin Capital Letter Ezh,Ʒ
+U+01B8,440,Latin Capital Letter Ezh reversed,Ƹ
+U+01B9,441,Latin Small Letter Ezh reversed,ƹ
+U+01BA,442,Latin Small Letter Ezh with tail,ƺ
+U+01BB,443,Latin Letter Two with stroke,ƻ
+U+01BC,444,Latin Capital Letter Tone Five,Ƽ
+U+01BD,445,Latin Small Letter Tone Five,ƽ
+U+01BE,446,Latin Letter Inverted Glottal Stop with stroke,ƾ
+U+01BF,447,Latin Letter Wynn,ƿ
+U+01C0,448,Latin Letter Dental Click,ǀ
+U+01C1,449,Latin Letter Lateral Click,ǁ
+U+01C2,450,Latin Letter Alveolar Click,ǂ
+U+01C3,451,Latin Letter Retroflex Click,ǃ
+U+01C4,452,Latin Capital Letter DZ with caron,Ǆ
+U+01C5,453,Latin Capital Letter D with Small Letter Z with caron,ǅ
+U+01C6,454,Latin Small Letter DZ with caron,ǆ
+U+01C7,455,Latin Capital Letter LJ,Ǉ
+U+01C8,456,Latin Capital Letter L with Small Letter J,ǈ
+U+01C9,457,Latin Small Letter LJ,ǉ
+U+01CA,458,Latin Capital Letter NJ,Ǌ
+U+01CB,459,Latin Capital Letter N with Small Letter J,ǋ
+U+01CC,460,Latin Small Letter NJ,ǌ
+U+01CD,461,Latin Capital Letter A with caron,Ǎ
+U+01CE,462,Latin Small Letter A with caron,ǎ
+U+01CF,463,Latin Capital Letter I with caron,Ǐ
+U+01D0,464,Latin Small Letter I with caron,ǐ
+U+01D1,465,Latin Capital Letter O with caron,Ǒ
+U+01D2,466,Latin Small Letter O with caron,ǒ
+U+01D3,467,Latin Capital Letter U with caron,Ǔ
+U+01D4,468,Latin Small Letter U with caron,ǔ
+U+01D5,469,Latin Capital Letter U with diaeresis and macron,Ǖ
+U+01D6,470,Latin Small Letter U with diaeresis and macron,ǖ
+U+01D7,471,Latin Capital Letter U with diaeresis and acute,Ǘ
+U+01D8,472,Latin Small Letter U with diaeresis and acute,ǘ
+U+01D9,473,Latin Capital Letter U with diaeresis and caron,Ǚ
+U+01DA,474,Latin Small Letter U with diaeresis and caron,ǚ
+U+01DB,475,Latin Capital Letter U with diaeresis and grave,Ǜ
+U+01DC,476,Latin Small Letter U with diaeresis and grave,ǜ
+U+01DD,477,Latin Small Letter Turned E,ǝ
+U+01DE,478,Latin Capital Letter A with diaeresis and macron,Ǟ
+U+01DF,479,Latin Small Letter A with diaeresis and macron,ǟ
+U+01E0,480,Latin Capital Letter A with dot above and macron,Ǡ
+U+01E1,481,Latin Small Letter A with dot above and macron,ǡ
+U+01E2,482,Latin Capital Letter Æ with macron,Ǣ
+U+01E3,483,Latin Small Letter Æ with macron,ǣ
+U+01E4,484,Latin Capital Letter G with stroke,Ǥ
+U+01E5,485,Latin Small Letter G with stroke,ǥ
+U+01E6,486,Latin Capital Letter G with caron,Ǧ
+U+01E7,487,Latin Small Letter G with caron,ǧ
+U+01E8,488,Latin Capital Letter K with caron,Ǩ
+U+01E9,489,Latin Small Letter K with caron,ǩ
+U+01EA,490,Latin Capital Letter O with ogonek,Ǫ
+U+01EB,491,Latin Small Letter O with ogonek,ǫ
+U+01EC,492,Latin Capital Letter O with ogonek and macron,Ǭ
+U+01ED,493,Latin Small Letter O with ogonek and macron,ǭ
+U+01EE,494,Latin Capital Letter Ezh with caron,Ǯ
+U+01EF,495,Latin Small Letter Ezh with caron,ǯ
+U+01F0,496,Latin Small Letter J with caron,ǰ
+U+01F1,497,Latin Capital Letter DZ,Ǳ
+U+01F2,498,Latin Capital Letter D with Small Letter Z,ǲ
+U+01F3,499,Latin Small Letter DZ,ǳ
+U+01F4,500,Latin Capital Letter G with acute,Ǵ
+U+01F5,501,Latin Small Letter G with acute,ǵ
+U+01F6,502,Latin Capital Letter Hwair,Ƕ
+U+01F7,503,Latin Capital Letter Wynn,Ƿ
+U+01F8,504,Latin Capital Letter N with grave,Ǹ
+U+01F9,505,Latin Small Letter N with grave,ǹ
+U+01FA,506,Latin Capital Letter A with ring above and acute,Ǻ
+U+01FB,507,Latin Small Letter A with ring above and acute,ǻ
+U+01FC,508,Latin Capital Letter Æ with acute,Ǽ
+U+01FD,509,Latin Small Letter Æ with acute,ǽ
+U+01FE,510,Latin Capital Letter O with stroke and acute,Ǿ
+U+01FF,511,Latin Small Letter O with stroke and acute,ǿ
+U+0200,512,Latin Capital Letter A with double grave,Ȁ
+U+0201,513,Latin Small Letter A with double grave,ȁ
+U+0202,514,Latin Capital Letter A with inverted breve,Ȃ
+U+0203,515,Latin Small Letter A with inverted breve,ȃ
+U+0204,516,Latin Capital Letter E with double grave,Ȅ
+U+0205,517,Latin Small Letter E with double grave,ȅ
+U+0206,518,Latin Capital Letter E with inverted breve,Ȇ
+U+0207,519,Latin Small Letter E with inverted breve,ȇ
+U+0208,520,Latin Capital Letter I with double grave,Ȉ
+U+0209,521,Latin Small Letter I with double grave,ȉ
+U+020A,522,Latin Capital Letter I with inverted breve,Ȋ
+U+020B,523,Latin Small Letter I with inverted breve,ȋ
+U+020C,524,Latin Capital Letter O with double grave,Ȍ
+U+020D,525,Latin Small Letter O with double grave,ȍ
+U+020E,526,Latin Capital Letter O with inverted breve,Ȏ
+U+020F,527,Latin Small Letter O with inverted breve,ȏ
+U+0210,528,Latin Capital Letter R with double grave,Ȑ
+U+0211,529,Latin Small Letter R with double grave,ȑ
+U+0212,530,Latin Capital Letter R with inverted breve,Ȓ
+U+0213,531,Latin Small Letter R with inverted breve,ȓ
+U+0214,532,Latin Capital Letter U with double grave,Ȕ
+U+0215,533,Latin Small Letter U with double grave,ȕ
+U+0216,534,Latin Capital Letter U with inverted breve,Ȗ
+U+0217,535,Latin Small Letter U with inverted breve,ȗ
+U+0218,536,Latin Capital Letter S with comma below,Ș
+U+0219,537,Latin Small Letter S with comma below,ș
+U+021A,538,Latin Capital Letter T with comma below,Ț
+U+021B,539,Latin Small Letter T with comma below,ț
+U+021C,540,Latin Capital Letter Yogh,Ȝ
+U+021D,541,Latin Small Letter Yogh,ȝ
+U+021E,542,Latin Capital Letter H with caron,Ȟ
+U+021F,543,Latin Small Letter H with caron,ȟ
+U+0220,544,Latin Capital Letter N with long right leg,Ƞ
+U+0221,545,Latin Small Letter D with curl,ȡ
+U+0222,546,Latin Capital Letter OU,Ȣ
+U+0223,547,Latin Small Letter OU,ȣ
+U+0224,548,Latin Capital Letter Z with hook,Ȥ
+U+0225,549,Latin Small Letter Z with hook,ȥ
+U+0226,550,Latin Capital Letter A with dot above,Ȧ
+U+0227,551,Latin Small Letter A with dot above,ȧ
+U+0228,552,Latin Capital Letter E with cedilla,Ȩ
+U+0229,553,Latin Small Letter E with cedilla,ȩ
+U+022A,554,Latin Capital Letter O with diaeresis and macron,Ȫ
+U+022B,555,Latin Small Letter O with diaeresis and macron,ȫ
+U+022C,556,Latin Capital Letter O with tilde and macron,Ȭ
+U+022D,557,Latin Small Letter O with tilde and macron,ȭ
+U+022E,558,Latin Capital Letter O with dot above,Ȯ
+U+022F,559,Latin Small Letter O with dot above,ȯ
+U+0230,560,Latin Capital Letter O with dot above and macron,Ȱ
+U+0231,561,Latin Small Letter O with dot above and macron,ȱ
+U+0232,562,Latin Capital Letter Y with macron,Ȳ
+U+0233,563,Latin Small Letter Y with macron,ȳ
+U+0234,564,Latin Small Letter L with curl,ȴ
+U+0235,565,Latin Small Letter N with curl,ȵ
+U+0236,566,Latin Small Letter T with curl,ȶ
+U+0237,567,Latin Small Letter Dotless J,ȷ
+U+0238,568,Latin Small Letter DB Digraph,ȸ
+U+0239,569,Latin Small Letter QP Digraph,ȹ
+U+023A,570,Latin Capital Letter A with stroke,Ⱥ
+U+023B,571,Latin Capital Letter C with stroke,Ȼ
+U+023C,572,Latin Small Letter C with stroke,ȼ
+U+023D,573,Latin Capital Letter L with bar,Ƚ
+U+023E,574,Latin Capital Letter T with diagonal stroke,Ⱦ
+U+023F,575,Latin Small Letter S with swash tail,ȿ
+U+0240,576,Latin Small Letter Z with swash tail,ɀ
+U+0241,577,Latin Capital Letter Glottal Stop,Ɂ
+U+0242,578,Latin Small Letter Glottal Stop,ɂ
+U+0243,579,Latin Capital Letter B with stroke,Ƀ
+U+0244,580,Latin Capital Letter U bar,Ʉ
+U+0245,581,Latin Capital Letter Turned V,Ʌ
+U+0246,582,Latin Capital Letter E with stroke,Ɇ
+U+0247,583,Latin Small Letter E with stroke,ɇ
+U+0248,584,Latin Capital Letter J with stroke,Ɉ
+U+0249,585,Latin Small Letter J with stroke,ɉ
+U+024A,586,Latin Capital Letter Q with hook tail,Ɋ
+U+024B,587,Latin Small Letter Q with hook tail,ɋ
+U+024C,588,Latin Capital Letter R with stroke,Ɍ
+U+024D,589,Latin Small Letter R with stroke,ɍ
+U+024E,590,Latin Capital Letter Y with stroke,Ɏ
+U+024F,591,Latin Small Letter Y with stroke,ɏ
+U+1E00,NaN,Latin Capital Letter A with ring below,Ḁ
+U+1E01,NaN,Latin Small Letter A with ring below,ḁ
+U+1E02,NaN,Latin Capital Letter B with dot above,Ḃ
+U+1E03,NaN,Latin Small Letter B with dot above,ḃ
+U+1E04,NaN,Latin Capital Letter B with dot below,Ḅ
+U+1E05,NaN,Latin Small Letter B with dot below,ḅ
+U+1E06,NaN,Latin Capital Letter B with line below,Ḇ
+U+1E07,NaN,Latin Small Letter B with line below,ḇ
+U+1E08,NaN,Latin Capital Letter C with cedilla and acute,Ḉ
+U+1E09,NaN,Latin Small Letter C with cedilla and acute,ḉ
+U+1E0A,NaN,Latin Capital Letter D with dot above,Ḋ
+U+1E0B,NaN,Latin Small Letter D with dot above,ḋ
+U+1E0C,NaN,Latin Capital Letter D with dot below,Ḍ
+U+1E0D,NaN,Latin Small Letter D with dot below,ḍ
+U+1E0E,NaN,Latin Capital Letter D with line below,Ḏ
+U+1E0F,NaN,Latin Small Letter D with line below,ḏ
+U+1E10,NaN,Latin Capital Letter D with cedilla,Ḑ
+U+1E11,NaN,Latin Small Letter D with cedilla,ḑ
+U+1E12,NaN,Latin Capital Letter D with circumflex below,Ḓ
+U+1E13,NaN,Latin Small Letter D with circumflex below,ḓ
+U+1E14,NaN,Latin Capital Letter E with macron and grave,Ḕ
+U+1E15,NaN,Latin Small Letter E with macron and grave,ḕ
+U+1E16,NaN,Latin Capital Letter E with macron and acute,Ḗ
+U+1E17,NaN,Latin Small Letter E with macron and acute,ḗ
+U+1E18,NaN,Latin Capital Letter E with circumflex below,Ḙ
+U+1E19,NaN,Latin Small Letter E with circumflex below,ḙ
+U+1E1A,NaN,Latin Capital Letter E with tilde below,Ḛ
+U+1E1B,NaN,Latin Small Letter E with tilde below,ḛ
+U+1E1C,NaN,Latin Capital Letter E with cedilla and breve,Ḝ
+U+1E1D,NaN,Latin Small Letter E with cedilla and breve,ḝ
+U+1E1E,NaN,Latin Capital Letter F with dot above,Ḟ
+U+1E1F,NaN,Latin Small Letter F with dot above,ḟ
+U+1E20,NaN,Latin Capital Letter G with macron,Ḡ
+U+1E21,NaN,Latin Small Letter G with macron,ḡ
+U+1E22,NaN,Latin Capital Letter H with dot above,Ḣ
+U+1E23,NaN,Latin Small Letter H with dot above,ḣ
+U+1E24,NaN,Latin Capital Letter H with dot below,Ḥ
+U+1E25,NaN,Latin Small Letter H with dot below,ḥ
+U+1E26,NaN,Latin Capital Letter H with diaeresis,Ḧ
+U+1E27,NaN,Latin Small Letter H with diaeresis,ḧ
+U+1E28,NaN,Latin Capital Letter H with cedilla,Ḩ
+U+1E29,NaN,Latin Small Letter H with cedilla,ḩ
+U+1E2A,NaN,Latin Capital Letter H with breve below,Ḫ
+U+1E2B,NaN,Latin Small Letter H with breve below,ḫ
+U+1E2C,NaN,Latin Capital Letter I with tilde below,Ḭ
+U+1E2D,NaN,Latin Small Letter I with tilde below,ḭ
+U+1E2E,NaN,Latin Capital Letter I with diaeresis and acute,Ḯ
+U+1E2F,NaN,Latin Small Letter I with diaeresis and acute,ḯ
+U+1E30,NaN,Latin Capital Letter K with acute,Ḱ
+U+1E31,NaN,Latin Small Letter K with acute,ḱ
+U+1E32,NaN,Latin Capital Letter K with dot below,Ḳ
+U+1E33,NaN,Latin Small Letter K with dot below,ḳ
+U+1E34,NaN,Latin Capital Letter K with line below,Ḵ
+U+1E35,NaN,Latin Small Letter K with line below,ḵ
+U+1E36,NaN,Latin Capital Letter L with dot below,Ḷ
+U+1E37,NaN,Latin Small Letter L with dot below,ḷ
+U+1E38,NaN,Latin Capital Letter L with dot below and macron,Ḹ
+U+1E39,NaN,Latin Small Letter L with dot below and macron,ḹ
+U+1E3A,NaN,Latin Capital Letter L with line below,Ḻ
+U+1E3B,NaN,Latin Small Letter L with line below,ḻ
+U+1E3C,NaN,Latin Capital Letter L with circumflex below,Ḽ
+U+1E3D,NaN,Latin Small Letter L with circumflex below,ḽ
+U+1E3E,NaN,Latin Capital Letter M with acute,Ḿ
+U+1E3F,NaN,Latin Small Letter M with acute,ḿ
+U+1E40,NaN,Latin Capital Letter M with dot above,Ṁ
+U+1E41,NaN,Latin Small Letter M with dot above,ṁ
+U+1E42,NaN,Latin Capital Letter M with dot below,Ṃ
+U+1E43,NaN,Latin Small Letter M with dot below,ṃ
+U+1E44,NaN,Latin Capital Letter N with dot above,Ṅ
+U+1E45,NaN,Latin Small Letter N with dot above,ṅ
+U+1E46,NaN,Latin Capital Letter N with dot below,Ṇ
+U+1E47,NaN,Latin Small Letter N with dot below,ṇ
+U+1E48,NaN,Latin Capital Letter N with line below,Ṉ
+U+1E49,NaN,Latin Small Letter N with line below,ṉ
+U+1E4A,NaN,Latin Capital Letter N with circumflex below,Ṋ
+U+1E4B,NaN,Latin Small Letter N with circumflex below,ṋ
+U+1E4C,NaN,Latin Capital Letter O with tilde and acute,Ṍ
+U+1E4D,NaN,Latin Small Letter O with tilde and acute,ṍ
+U+1E4E,NaN,Latin Capital Letter O with tilde and diaeresis,Ṏ
+U+1E4F,NaN,Latin Small Letter O with tilde and diaeresis,ṏ
+U+1E50,NaN,Latin Capital Letter O with macron and grave,Ṑ
+U+1E51,NaN,Latin Small Letter O with macron and grave,ṑ
+U+1E52,NaN,Latin Capital Letter O with macron and acute,Ṓ
+U+1E53,NaN,Latin Small Letter O with macron and acute,ṓ
+U+1E54,NaN,Latin Capital Letter P with acute,Ṕ
+U+1E55,NaN,Latin Small Letter P with acute,ṕ
+U+1E56,NaN,Latin Capital Letter P with dot above,Ṗ
+U+1E57,NaN,Latin Small Letter P with dot above,ṗ
+U+1E58,NaN,Latin Capital Letter R with dot above,Ṙ
+U+1E59,NaN,Latin Small Letter R with dot above,ṙ
+U+1E5A,NaN,Latin Capital Letter R with dot below,Ṛ
+U+1E5B,NaN,Latin Small Letter R with dot below,ṛ
+U+1E5C,NaN,Latin Capital Letter R with dot below and macron,Ṝ
+U+1E5D,NaN,Latin Small Letter R with dot below and macron,ṝ
+U+1E5E,NaN,Latin Capital Letter R with line below,Ṟ
+U+1E5F,NaN,Latin Small Letter R with line below,ṟ
+U+1E60,NaN,Latin Capital Letter S with dot above,Ṡ
+U+1E61,NaN,Latin Small Letter S with dot above,ṡ
+U+1E62,NaN,Latin Capital Letter S with dot below,Ṣ
+U+1E63,NaN,Latin Small Letter S with dot below,ṣ
+U+1E64,NaN,Latin Capital Letter S with acute and dot above,Ṥ
+U+1E65,NaN,Latin Small Letter S with acute and dot above,ṥ
+U+1E66,NaN,Latin Capital Letter S with caron and dot above,Ṧ
+U+1E67,NaN,Latin Small Letter S with caron and dot above,ṧ
+U+1E68,NaN,Latin Capital Letter S with dot below and dot above,Ṩ
+U+1E69,NaN,Latin Small Letter S with dot below and dot above,ṩ
+U+1E6A,NaN,Latin Capital Letter T with dot above,Ṫ
+U+1E6B,NaN,Latin Small Letter T with dot above,ṫ
+U+1E6C,NaN,Latin Capital Letter T with dot below,Ṭ
+U+1E6D,NaN,Latin Small Letter T with dot below,ṭ
+U+1E6E,NaN,Latin Capital Letter T with line below,Ṯ
+U+1E6F,NaN,Latin Small Letter T with line below,ṯ
+U+1E70,NaN,Latin Capital Letter T with circumflex below,Ṱ
+U+1E71,NaN,Latin Small Letter T with circumflex below,ṱ
+U+1E72,NaN,Latin Capital Letter U with diaeresis below,Ṳ
+U+1E73,NaN,Latin Small Letter U with diaeresis below,ṳ
+U+1E74,NaN,Latin Capital Letter U with tilde below,Ṵ
+U+1E75,NaN,Latin Small Letter U with tilde below,ṵ
+U+1E76,NaN,Latin Capital Letter U with circumflex below,Ṷ
+U+1E77,NaN,Latin Small Letter U with circumflex below,ṷ
+U+1E78,NaN,Latin Capital Letter U with tilde and acute,Ṹ
+U+1E79,NaN,Latin Small Letter U with tilde and acute,ṹ
+U+1E7A,NaN,Latin Capital Letter U with macron and diaeresis,Ṻ
+U+1E7B,NaN,Latin Small Letter U with macron and diaeresis,ṻ
+U+1E7C,NaN,Latin Capital Letter V with tilde,Ṽ
+U+1E7D,NaN,Latin Small Letter V with tilde,ṽ
+U+1E7E,NaN,Latin Capital Letter V with dot below,Ṿ
+U+1E7F,NaN,Latin Small Letter V with dot below,ṿ
+U+1E80,NaN,Latin Capital Letter W with grave,Ẁ
+U+1E81,NaN,Latin Small Letter W with grave,ẁ
+U+1E82,NaN,Latin Capital Letter W with acute,Ẃ
+U+1E83,NaN,Latin Small Letter W with acute,ẃ
+U+1E84,NaN,Latin Capital Letter W with diaeresis,Ẅ
+U+1E85,NaN,Latin Small Letter W with diaeresis,ẅ
+U+1E86,NaN,Latin Capital Letter W with dot above,Ẇ
+U+1E87,NaN,Latin Small Letter W with dot above,ẇ
+U+1E88,NaN,Latin Capital Letter W with dot below,Ẉ
+U+1E89,NaN,Latin Small Letter W with dot below,ẉ
+U+1E8A,NaN,Latin Capital Letter X with dot above,Ẋ
+U+1E8B,NaN,Latin Small Letter X with dot above,ẋ
+U+1E8C,NaN,Latin Capital Letter X with diaeresis,Ẍ
+U+1E8D,NaN,Latin Small Letter X with diaeresis,ẍ
+U+1E8E,NaN,Latin Capital Letter Y with dot above,Ẏ
+U+1E8F,NaN,Latin Small Letter Y with dot above,ẏ
+U+1E90,NaN,Latin Capital Letter Z with circumflex,Ẑ
+U+1E91,NaN,Latin Small Letter Z with circumflex,ẑ
+U+1E92,NaN,Latin Capital Letter Z with dot below,Ẓ
+U+1E93,NaN,Latin Small Letter Z with dot below,ẓ
+U+1E94,NaN,Latin Capital Letter Z with line below,Ẕ
+U+1E95,NaN,Latin Small Letter Z with line below,ẕ
+U+1E96,NaN,Latin Small Letter H with line below,ẖ
+U+1E97,NaN,Latin Small Letter T with diaeresis,ẗ
+U+1E98,NaN,Latin Small Letter W with ring above,ẘ
+U+1E99,NaN,Latin Small Letter Y with ring above,ẙ
+U+1E9A,NaN,Latin Small Letter A with right half ring,ẚ
+U+1E9B,NaN,Latin Small Letter Long S with dot above,ẛ
+U+1E9C,NaN,Latin Small Letter Long S with diagonal stroke,ẜ
+U+1E9D,NaN,Latin Small Letter Long S with high stroke,ẝ
+U+1E9E,NaN,Latin Capital Letter Sharp S,ẞ
+U+1E9F,NaN,Latin Small Letter Delta,ẟ
+U+1EA0,NaN,Latin Capital Letter A with dot below,Ạ
+U+1EA1,NaN,Latin Small Letter A with dot below,ạ
+U+1EA2,NaN,Latin Capital Letter A with hook above,Ả
+U+1EA3,NaN,Latin Small Letter A with hook above,ả
+U+1EA4,NaN,Latin Capital Letter A with circumflex and acute,Ấ
+U+1EA5,NaN,Latin Small Letter A with circumflex and acute,ấ
+U+1EA6,NaN,Latin Capital Letter A with circumflex and grave,Ầ
+U+1EA7,NaN,Latin Small Letter A with circumflex and grave,ầ
+U+1EA8,NaN,Latin Capital Letter A with circumflex and hook above,Ẩ
+U+1EA9,NaN,Latin Small Letter A with circumflex and hook above,ẩ
+U+1EAA,NaN,Latin Capital Letter A with circumflex and tilde,Ẫ
+U+1EAB,NaN,Latin Small Letter A with circumflex and tilde,ẫ
+U+1EAC,NaN,Latin Capital Letter A with circumflex and dot below,Ậ
+U+1EAD,NaN,Latin Small Letter A with circumflex and dot below,ậ
+U+1EAE,NaN,Latin Capital Letter A with breve and acute,Ắ
+U+1EAF,NaN,Latin Small Letter A with breve and acute,ắ
+U+1EB0,NaN,Latin Capital Letter A with breve and grave,Ằ
+U+1EB1,NaN,Latin Small Letter A with breve and grave,ằ
+U+1EB2,NaN,Latin Capital Letter A with breve and hook above,Ẳ
+U+1EB3,NaN,Latin Small Letter A with breve and hook above,ẳ
+U+1EB4,NaN,Latin Capital Letter A with breve and tilde,Ẵ
+U+1EB5,NaN,Latin Small Letter A with breve and tilde,ẵ
+U+1EB6,NaN,Latin Capital Letter A with breve and dot below,Ặ
+U+1EB7,NaN,Latin Small Letter A with breve and dot below,ặ
+U+1EB8,NaN,Latin Capital Letter E with dot below,Ẹ
+U+1EB9,NaN,Latin Small Letter E with dot below,ẹ
+U+1EBA,NaN,Latin Capital Letter E with hook above,Ẻ
+U+1EBB,NaN,Latin Small Letter E with hook above,ẻ
+U+1EBC,NaN,Latin Capital Letter E with tilde,Ẽ
+U+1EBD,NaN,Latin Small Letter E with tilde,ẽ
+U+1EBE,NaN,Latin Capital Letter E with circumflex and acute,Ế
+U+1EBF,NaN,Latin Small Letter E with circumflex and acute,ế
+U+1EC0,NaN,Latin Capital Letter E with circumflex and grave,Ề
+U+1EC1,NaN,Latin Small Letter E with circumflex and grave,ề
+U+1EC2,NaN,Latin Capital Letter E with circumflex and hook above,Ể
+U+1EC3,NaN,Latin Small Letter E with circumflex and hook above,ể
+U+1EC4,NaN,Latin Capital Letter E with circumflex and tilde,Ễ
+U+1EC5,NaN,Latin Small Letter E with circumflex and tilde,ễ
+U+1EC6,NaN,Latin Capital Letter E with circumflex and dot below,Ệ
+U+1EC7,NaN,Latin Small Letter E with circumflex and dot below,ệ
+U+1EC8,NaN,Latin Capital Letter I with hook above,Ỉ
+U+1EC9,NaN,Latin Small Letter I with hook above,ỉ
+U+1ECA,NaN,Latin Capital Letter I with dot below,Ị
+U+1ECB,NaN,Latin Small Letter I with dot below,ị
+U+1ECC,NaN,Latin Capital Letter O with dot below,Ọ
+U+1ECD,NaN,Latin Small Letter O with dot below,ọ
+U+1ECE,NaN,Latin Capital Letter O with hook above,Ỏ
+U+1ECF,NaN,Latin Small Letter O with hook above,ỏ
+U+1ED0,NaN,Latin Capital Letter O with circumflex and acute,Ố
+U+1ED1,NaN,Latin Small Letter O with circumflex and acute,ố
+U+1ED2,NaN,Latin Capital Letter O with circumflex and grave,Ồ
+U+1ED3,NaN,Latin Small Letter O with circumflex and grave,ồ
+U+1ED4,NaN,Latin Capital Letter O with circumflex and hook above,Ổ
+U+1ED5,NaN,Latin Small Letter O with circumflex and hook above,ổ
+U+1ED6,NaN,Latin Capital Letter O with circumflex and tilde,Ỗ
+U+1ED7,NaN,Latin Small Letter O with circumflex and tilde,ỗ
+U+1ED8,NaN,Latin Capital Letter O with circumflex and dot below,Ộ
+U+1ED9,NaN,Latin Small Letter O with circumflex and dot below,ộ
+U+1EDA,NaN,Latin Capital Letter O with horn and acute,Ớ
+U+1EDB,NaN,Latin Small Letter O with horn and acute,ớ
+U+1EDC,NaN,Latin Capital Letter O with horn and grave,Ờ
+U+1EDD,NaN,Latin Small Letter O with horn and grave,ờ
+U+1EDE,NaN,Latin Capital Letter O with horn and hook above,Ở
+U+1EDF,NaN,Latin Small Letter O with horn and hook above,ở
+U+1EE0,NaN,Latin Capital Letter O with horn and tilde,Ỡ
+U+1EE1,NaN,Latin Small Letter O with horn and tilde,ỡ
+U+1EE2,NaN,Latin Capital Letter O with horn and dot below,Ợ
+U+1EE3,NaN,Latin Small Letter O with horn and dot below,ợ
+U+1EE4,NaN,Latin Capital Letter U with dot below,Ụ
+U+1EE5,NaN,Latin Small Letter U with dot below,ụ
+U+1EE6,NaN,Latin Capital Letter U with hook above,Ủ
+U+1EE7,NaN,Latin Small Letter U with hook above,ủ
+U+1EE8,NaN,Latin Capital Letter U with horn and acute,Ứ
+U+1EE9,NaN,Latin Small Letter U with horn and acute,ứ
+U+1EEA,NaN,Latin Capital Letter U with horn and grave,Ừ
+U+1EEB,NaN,Latin Small Letter U with horn and grave,ừ
+U+1EEC,NaN,Latin Capital Letter U with horn and hook above,Ử
+U+1EED,NaN,Latin Small Letter U with horn and hook above,ử
+U+1EEE,NaN,Latin Capital Letter U with horn and tilde,Ữ
+U+1EEF,NaN,Latin Small Letter U with horn and tilde,ữ
+U+1EF0,NaN,Latin Capital Letter U with horn and dot below,Ự
+U+1EF1,NaN,Latin Small Letter U with horn and dot below,ự
+U+1EF2,NaN,Latin Capital Letter Y with grave,Ỳ
+U+1EF3,NaN,Latin Small Letter Y with grave,ỳ
+U+1EF4,NaN,Latin Capital Letter Y with dot below,Ỵ
+U+1EF5,NaN,Latin Small Letter Y with dot below,ỵ
+U+1EF6,NaN,Latin Capital Letter Y with hook above,Ỷ
+U+1EF7,NaN,Latin Small Letter Y with hook above,ỷ
+U+1EF8,NaN,Latin Capital Letter Y with tilde,Ỹ
+U+1EF9,NaN,Latin Small Letter Y with tilde,ỹ
+U+1EFA,NaN,Latin Capital Letter Middle-Welsh LL,Ỻ
+U+1EFB,NaN,Latin Small Letter Middle-Welsh LL,ỻ
+U+1EFC,NaN,Latin Capital Letter Middle-Welsh V,Ỽ
+U+1EFD,NaN,Latin Small Letter Middle-Welsh V,ỽ
+U+1EFE,NaN,Latin Capital Letter Y with loop,Ỿ
+U+1EFF,NaN,Latin Small Letter Y with loop,ỿ
+U+0250,592,Latin Small Letter Turned A,ɐ
+U+0251,593,Latin Small Letter Alpha,ɑ
+U+0252,594,Latin Small Letter Turned Alpha,ɒ
+U+0253,595,Latin Small Letter B with Hook,ɓ
+U+0254,596,Latin Small Letter Open O,ɔ
+U+0255,597,Latin Small Letter C with Curl,ɕ
+U+0256,598,Latin Small Letter D with Tail,ɖ
+U+0257,599,Latin Small Letter D with Hook,ɗ
+U+0258,600,Latin Small Letter Reversed E,ɘ
+U+0259,601,Latin Small Letter Schwa,ə
+U+025A,602,Latin Small Letter Schwa with Hook,ɚ
+U+025B,603,Latin Small Letter Open E,ɛ
+U+025C,604,Latin Small Letter Reversed Open E,ɜ
+U+025D,605,Latin Small Letter Reversed Open E with Hook,ɝ
+U+025E,606,Latin Small Letter Closed Reversed Open E,ɞ
+U+025F,607,Latin Small Letter Dotless J with Stroke,ɟ
+U+0260,608,Latin Small Letter G with Hook,ɠ
+U+0261,609,Latin Small Letter Script G,ɡ
+U+0262,610,Latin Letter Small Capital G,ɢ
+U+0263,611,Latin Small Letter Gamma,ɣ
+U+0264,612,Latin Small Letter Rams Horn,ɤ
+U+0265,613,Latin Small Letter Turned H,ɥ
+U+0266,614,Latin Small Letter H with Hook,ɦ
+U+0267,615,Latin Small Letter Heng with Hook,ɧ
+U+0268,616,Latin Small Letter I with Stroke,ɨ
+U+0269,617,Latin Small Letter Iota,ɩ
+U+026A,618,Latin Letter Small Capital I,ɪ
+U+026B,619,Latin Small Letter L with Middle Tilde,ɫ
+U+026C,620,Latin Small Letter L with Belt,ɬ
+U+026D,621,Latin Small Letter L with Retroflex Hook,ɭ
+U+026E,622,Latin Small Letter Lezh,ɮ
+U+026F,623,Latin Small Letter Turned M,ɯ
+U+0270,624,Latin Small Letter Turned M with Long Leg,ɰ
+U+0271,625,Latin Small Letter M with Hook,ɱ
+U+0272,626,Latin Small Letter N with Left Hook,ɲ
+U+0273,627,Latin Small Letter N with Retroflex Hook,ɳ
+U+0274,628,Latin Letter Small Capital N,ɴ
+U+0275,629,Latin Small Letter Barred O,ɵ
+U+0276,630,Latin Letter Small Capital OE,ɶ
+U+0277,631,Latin Small Letter Closed Omega,ɷ
+U+0278,632,Latin Small Letter Phi,ɸ
+U+0279,633,Latin Small Letter Turned R,ɹ
+U+027A,634,Latin Small Letter Turned R with Long Leg,ɺ
+U+027B,635,Latin Small Letter Turned R with Hook,ɻ
+U+027C,636,Latin Small Letter R with long leg,ɼ
+U+027D,637,Latin Small Letter R with Tail,ɽ
+U+027E,638,Latin Small Letter R with Fishhook,ɾ
+U+027F,639,Latin Small Letter Reversed R with Fishhook,ɿ
+U+0280,640,Latin Letter Small Capital R,ʀ
+U+0281,641,Latin Letter Small Capital Inverted R,ʁ
+U+0282,642,Latin Small Letter S with Hook,ʂ
+U+0283,643,Latin Small Letter Esh,ʃ
+U+0284,644,Latin Small Letter Dotless J with Stroke and Hook,ʄ
+U+0285,645,Latin Small Letter Squat Reversed Esh,ʅ
+U+0286,646,Latin Small Letter Esh with Curl,ʆ
+U+0287,647,Latin Small Letter Turned T,ʇ
+U+0288,648,Latin Small Letter T with Retroflex Hook,ʈ
+U+0289,649,Latin Small Letter U Bar,ʉ
+U+028A,650,Latin Small Letter Upsilon,ʊ
+U+028B,651,Latin Small Letter V with Hook,ʋ
+U+028C,652,Latin Small Letter Turned V,ʌ
+U+028D,653,Latin Small Letter Turned W,ʍ
+U+028E,654,Latin Small Letter Turned Y,ʎ
+U+028F,655,Latin Letter Small Capital Y,ʏ
+U+0290,656,Latin Small Letter Z with Retroflex Hook,ʐ
+U+0291,657,Latin Small Letter Z with Curl,ʑ
+U+0292,658,Latin Small Letter Ezh,ʒ
+U+0293,659,Latin Small Letter Ezh with Curl,ʓ
+U+0294,660,Latin Letter Glottal Stop,ʔ
+U+0295,661,Latin Letter Pharyngeal Voiced Fricative,ʕ
+U+0296,662,Latin Letter Inverted Glottal Stop,ʖ
+U+0297,663,Latin Letter Stretched C,ʗ
+U+0298,664,Latin Letter Bilabial Click,ʘ
+U+0299,665,Latin Letter Small Capital B,ʙ
+U+029A,666,Latin Small Letter Closed Open E,ʚ
+U+029B,667,Latin Letter Small Capital G with Hook,ʛ
+U+029C,668,Latin Letter Small Capital H,ʜ
+U+029D,669,Latin Small Letter J with Crossed Tail,ʝ
+U+029E,670,Latin Small Letter Turned K,ʞ
+U+029F,671,Latin Letter Small Capital L,ʟ
+U+02A0,672,Latin Small Letter Q with Hook,ʠ
+U+02A1,673,Latin Letter Glottal Stop with Stroke,ʡ
+U+02A2,674,Latin Letter Reversed Glottal Stop with Stroke,ʢ
+U+02A3,675,Latin Small Letter DZ Digraph,ʣ
+U+02A4,676,Latin Small Letter Dezh Digraph,ʤ
+U+02A5,677,Latin Small Letter DZ Digraph with Curl,ʥ
+U+02A6,678,Latin Small Letter TS Digraph,ʦ
+U+02A7,679,Latin Small Letter Tesh Digraph,ʧ
+U+02A8,680,Latin Small Letter TC Digraph with Curl,ʨ
+U+02A9,681,Latin Small Letter Feng Digraph,ʩ
+U+02AA,682,Latin Small Letter LS Digraph,ʪ
+U+02AB,683,Latin Small Letter LZ Digraph,ʫ
+U+02AC,684,Latin Letter Bilabial Percussive,ʬ
+U+02AD,685,Latin Letter Bidental Percussive,ʭ
+U+02AE,686,Latin Small Letter Turned H with Fishhook,ʮ
+U+02AF,687,Latin Small Letter Turned H with Fishhook and Tail,ʯ
+U+02B0,688,Modifier Letter Small H,ʰ
+U+02B1,689,Modifier Letter Small H with hook,ʱ
+U+02B2,690,Modifier Letter Small J,ʲ
+U+02B3,691,Modifier Letter Small R,ʳ
+U+02B4,692,Modifier Letter Small Turned R,ʴ
+U+02B5,693,Modifier Letter Small Turned R with hook,ʵ
+U+02B6,694,Modifier Letter Small Capital Inverted R,ʶ
+U+02B7,695,Modifier Letter Small W,ʷ
+U+02B8,696,Modifier Letter Small Y,ʸ
+U+02B9,697,Modifier Letter Prime,ʹ
+U+02BA,698,Modifier Letter Double Prime,ʺ
+U+02BB,699,Modifier Letter Turned Comma,ʻ
+U+02BC,700,Modifier Letter Apostrophe,ʼ
+U+02BD,701,Modifier Letter Reversed Comma,ʽ
+U+02BE,702,Modifier Letter Right Half Ring,ʾ
+U+02BF,703,Modifier Letter Left Half Ring,ʿ
+U+02C0,704,Modifier Letter Glottal Stop,ˀ
+U+02C1,705,Modifier Letter Reversed Glottal Stop,ˁ
+U+02C2,706,Modifier Letter Left Arrowhead,˂
+U+02C3,707,Modifier Letter Right Arrowhead,˃
+U+02C4,708,Modifier Letter Up Arrowhead,˄
+U+02C5,709,Modifier Letter Down Arrowhead,˅
+U+02C6,710,Modifier Letter Circumflex Accent,ˆ
+U+02C7,711,Caron,ˇ
+U+02C8,712,Modifier Letter Vertical Line,ˈ
+U+02C9,713,Modifier Letter Macron,ˉ
+U+02CA,714,Modifier Letter Acute Accent,ˊ
+U+02CB,715,Modifier Letter Grave Accent,ˋ
+U+02CC,716,Modifier Letter Low Vertical Line,ˌ
+U+02CD,717,Modifier Letter Low Macron,ˍ
+U+02CE,718,Modifier Letter Low Grave Accent,ˎ
+U+02CF,719,Modifier Letter Low Acute Accent,ˏ
+U+02D0,720,Modifier Letter Triangular Colon,ː
+U+02D1,721,Modifier Letter Half Triangular Colon,ˑ
+U+02D2,722,Modifier Letter Centered Right Half Ring,˒
+U+02D3,723,Modifier Letter Centered Left Half Ring,˓
+U+02D4,724,Modifier Letter Up Tack,˔
+U+02D5,725,Modifier Letter Down Tack,˕
+U+02D6,726,Modifier Letter Plus Sign,˖
+U+02D7,727,Modifier Letter Minus Sign,˗
+U+02D8,728,Breve,˘
+U+02D9,729,Dot Above,˙
+U+02DA,730,Ring Above,˚
+U+02DB,731,Ogonek,˛
+U+02DC,732,Small Tilde,˜
+U+02DD,733,Double Acute Accent,˝
+U+02DE,734,Modifier Letter Rhotic Hook,˞
+U+02DF,735,Modifier Letter Cross Accent,˟
+U+02E0,736,Modifier Letter Small Gamma,ˠ
+U+02E1,737,Modifier Letter Small L,ˡ
+U+02E2,738,Modifier Letter Small S,ˢ
+U+02E3,739,Modifier Letter Small X,ˣ
+U+02E4,740,Modifier Letter Small Reversed Glottal Stop,ˤ
+U+02E5,741,Modifier Letter Extra-High Tone Bar,˥
+U+02E6,742,Modifier Letter High Tone Bar,˦
+U+02E7,743,Modifier Letter Mid Tone Bar,˧
+U+02E8,744,Modifier Letter Low Tone Bar,˨
+U+02E9,745,Modifier Letter Extra-Low Tone Bar,˩
+U+02EA,746,Modifier Letter Yin Departing Tone Mark,˪
+U+02EB,747,Modifier Letter Yang Departing Tone Mark,˫
+U+02EC,748,Modifier Letter Voicing,ˬ
+U+02ED,749,Modifier Letter Unaspirated,˭
+U+02EE,750,Modifier Letter Double Apostrophe,ˮ
+U+02EF,751,Modifier Letter Low Down Arrowhead,˯
+U+02F0,752,Modifier Letter Low Up Arrowhead,˰
+U+02F1,753,Modifier Letter Low Left Arrowhead,˱
+U+02F2,754,Modifier Letter Low Right Arrowhead,˲
+U+02F3,755,Modifier Letter Low Ring,˳
+U+02F4,756,Modifier Letter Middle Grave Accent,˴
+U+02F5,757,Modifier Letter Middle Double Grave Accent,˵
+U+02F6,758,Modifier Letter Middle Double Acute Accent,˶
+U+02F7,759,Modifier Letter Low Tilde,˷
+U+02F8,760,Modifier Letter Raised Colon,˸
+U+02F9,761,Modifier Letter Begin High Tone,˹
+U+02FA,762,Modifier Letter End High Tone,˺
+U+02FB,763,Modifier Letter Begin Low Tone,˻
+U+02FC,764,Modifier Letter End Low Tone,˼
+U+02FD,765,Modifier Letter Shelf,˽
+U+02FE,766,Modifier Letter Open Shelf,˾
+U+02FF,767,Modifier Letter Low Left Arrow,˿
+U+0300,768,Combining Grave Accent,̀
+U+0301,769,Combining Acute Accent,́
+U+0302,770,Combining Circumflex Accent,̂
+U+0303,771,Combining Tilde,̃
+U+0304,772,Combining Macron,̄
+U+0305,773,Combining Overline,̅
+U+0306,774,Combining Breve,̆
+U+0307,775,Combining Dot Above,̇
+U+0308,776,Combining Diaeresis,̈
+U+0309,777,Combining Hook Above,̉
+U+030A,778,Combining Ring Above,̊
+U+030B,779,Combining Double Acute Accent,̋
+U+030C,780,Combining Caron,̌
+U+030D,781,Combining Vertical Line Above,̍
+U+030E,782,Combining Double Vertical Line Above,̎
+U+030F,783,Combining Double Grave Accent,̏
+U+0310,784,Combining Candrabindu,̐
+U+0311,785,Combining Inverted Breve,̑
+U+0312,786,Combining Turned Comma Above,̒
+U+0313,787,Combining Comma Above,̓
+U+0314,788,Combining Reversed Comma Above,̔
+U+0315,789,Combining Comma Above Right,̕
+U+0316,790,Combining Grave Accent Below,̖
+U+0317,791,Combining Acute Accent Below,̗
+U+0318,792,Combining Left Tack Below,̘
+U+0319,793,Combining Right Tack Below,̙
+U+031A,794,Combining Left Angle Above,̚
+U+031B,795,Combining Horn,̛
+U+031C,796,Combining Left Half Ring Below,̜
+U+031D,797,Combining Up Tack Below,̝
+U+031E,798,Combining Down Tack Below,̞
+U+031F,799,Combining Plus Sign Below,̟
+U+0320,800,Combining Minus Sign Below,̠
+U+0321,801,Combining Palatalized Hook Below,̡
+U+0322,802,Combining Retroflex Hook Below,̢
+U+0323,803,Combining Dot Below,̣
+U+0324,804,Combining Diaeresis Below,̤
+U+0325,805,Combining Ring Below,̥
+U+0326,806,Combining Comma Below,̦
+U+0327,807,Combining Cedilla,̧
+U+0328,808,Combining Ogonek,̨
+U+0329,809,Combining Vertical Line Below,̩
+U+032A,810,Combining Bridge Below,̪
+U+032B,811,Combining Inverted Double Arch Below,̫
+U+032C,812,Combining Caron Below,̬
+U+032D,813,Combining Circumflex Accent Below,̭
+U+032E,814,Combining Breve Below,̮
+U+032F,815,Combining Inverted Breve Below,̯
+U+0330,816,Combining Tilde Below,̰
+U+0331,817,Combining Macron Below,̱
+U+0332,818,Combining Low Line,̲
+U+0333,819,Combining Double Low Line,̳
+U+0334,820,Combining Tilde Overlay,̴
+U+0335,821,Combining Short Stroke Overlay,̵
+U+0336,822,Combining Long Stroke Overlay,̶
+U+0337,823,Combining Short Solidus Overlay,̷
+U+0338,824,Combining Long Solidus Overlay,̸
+U+0339,825,Combining Right Half Ring Below,̹
+U+033A,826,Combining Inverted Bridge Below,̺
+U+033B,827,Combining Square Below,̻
+U+033C,828,Combining Seagull Below,̼
+U+033D,829,Combining X Above,̽
+U+033E,830,Combining Vertical Tilde,̾
+U+033F,831,Combining Double Overline,̿
+U+0340,832,Combining Grave Tone Mark,̀
+U+0341,833,Combining Acute Tone Mark,́
+U+0342,834,Combining Greek Perispomeni,͂
+U+0343,835,Combining Greek Koronis,̓
+U+0344,836,Combining Greek Dialytika Tonos,̈́
+U+0345,837,Combining Greek Ypogegrammeni,ͅ
+U+0346,838,Combining Bridge Above,͆
+U+0347,839,Combining Equals Sign Below,͇
+U+0348,840,Combining Double Vertical Line Below,͈
+U+0349,841,Combining Left Angle Below,͉
+U+034A,842,Combining Not Tilde Above,͊
+U+034B,843,Combining Homothetic Above,͋
+U+034C,844,Combining Almost Equal To Above,͌
+U+034D,845,Combining Left Right Arrow Below,͍
+U+034E,846,Combining Upwards Arrow Below,͎
+U+034F,847,Combining Grapheme Joiner,͏
+U+0350,848,Combining Right Arrowhead Above,͐
+U+0351,849,Combining Left Half Ring Above,͑
+U+0352,850,Combining Fermata,͒
+U+0353,851,Combining X Below,͓
+U+0354,852,Combining Left Arrowhead Below,͔
+U+0355,853,Combining Right Arrowhead Below,͕
+U+0356,854,Combining Right Arrowhead And Up Arrowhead Below,͖
+U+0357,855,Combining Right Half Ring Above,͗
+U+0358,856,Combining Dot Above Right,͘
+U+0359,857,Combining Asterisk Below,͙
+U+035A,858,Combining Double Ring Below,͚
+U+035B,859,Combining Zigzag Above,͛
+U+035C,860,Combining Double Breve Below,͜
+U+035D,861,Combining Double Breve,͝
+U+035E,862,Combining Double Macron,͞
+U+035F,863,Combining Double Macron Below,͟
+U+0360,864,Combining Double Tilde,͠
+U+0361,865,Combining Double Inverted Breve,͡
+U+0362,866,Combining Double Rightwards Arrow Below,͢
+U+0363,867,Combining Latin Small Letter A,ͣ
+U+0364,868,Combining Latin Small Letter E,ͤ
+U+0365,869,Combining Latin Small Letter I,ͥ
+U+0366,870,Combining Latin Small Letter O,ͦ
+U+0367,871,Combining Latin Small Letter U,ͧ
+U+0368,872,Combining Latin Small Letter C,ͨ
+U+0369,873,Combining Latin Small Letter D,ͩ
+U+036A,874,Combining Latin Small Letter H,ͪ
+U+036B,875,Combining Latin Small Letter M,ͫ
+U+036C,876,Combining Latin Small Letter R,ͬ
+U+036D,877,Combining Latin Small Letter T,ͭ
+U+036E,878,Combining Latin Small Letter V,ͮ
+U+036F,879,Combining Latin Small Letter X,ͯ
+U+0370,880,Greek Capital Letter Heta,Ͱ
+U+0371,881,Greek Small Letter Heta,ͱ
+U+0372,882,Greek Capital Letter Archaic Sampi,Ͳ
+U+0373,883,Greek Small Letter Archaic Sampi,ͳ
+U+0374,884,Greek Numeral Sign,ʹ
+U+0375,885,Greek Lower Numeral Sign,͵
+U+0376,886,Greek Capital Letter Pamphylian Digamma,Ͷ
+U+0377,887,Greek Small Letter Pamphylian Digamma,ͷ
+U+037A,890,Greek Ypogegrammeni,ͺ
+U+037B,891,Greek Small Reversed Lunate Sigma Symbol,ͻ
+U+037C,892,Greek Small Dotted Lunate Sigma Symbol,ͼ
+U+037D,893,Greek Small Reversed Dotted Lunate Sigma Symbol,ͽ
+U+037E,894,Greek Question Mark,;
+U+037F,895,Greek Capital Letter Yot,Ϳ
+U+0384,900,Greek acute accent (tonos),΄
+U+0385,901,Greek diaeresis with acute accent,΅
+U+0386,902,Greek Capital Letter A with acute accent,Ά
+U+0387,903,Greek Ano Teleia,·
+U+0388,904,Greek Capital Letter Epsilon with acute accent,Έ
+U+0389,905,Greek Capital Letter Eta with acute accent,Ή
+U+038A,906,Greek Capital Letter Iota with acute accent,Ί
+U+038C,908,Greek Capital Letter Omicron with acute accent,Ό
+U+038E,910,Greek Capital Letter Upsilon with acute accent,Ύ
+U+038F,911,Greek Capital Letter Omega with acute accent,Ώ
+U+0390,912,Greek Small Letter Iota with diaeresis and acute accent,ΐ
+U+0391,913,Greek Capital Letter Alpha,Α
+U+0392,914,Greek Capital Letter Beta,Β
+U+0393,915,Greek Capital Letter Gamma,Γ
+U+0394,916,Greek Capital Letter Delta,Δ
+U+0395,917,Greek Capital Letter Epsilon,Ε
+U+0396,918,Greek Capital Letter Zeta,Ζ
+U+0397,919,Greek Capital Letter Eta,Η
+U+0398,920,Greek Capital Letter Theta,Θ
+U+0399,921,Greek Capital Letter Iota,Ι
+U+039A,922,Greek Capital Letter Kappa,Κ
+U+039B,923,Greek Capital Letter Lambda,Λ
+U+039C,924,Greek Capital Letter Mu,Μ
+U+039D,925,Greek Capital Letter Nu,Ν
+U+039E,926,Greek Capital Letter Xi,Ξ
+U+039F,927,Greek Capital Letter Omicron,Ο
+U+03A0,928,Greek Capital Letter Pi,Π
+U+03A1,929,Greek Capital Letter Rho,Ρ
+U+03A3,931,Greek Capital Letter Sigma,Σ
+U+03A4,932,Greek Capital Letter Tau,Τ
+U+03A5,933,Greek Capital Letter Upsilon,Υ
+U+03A6,934,Greek Capital Letter Phi,Φ
+U+03A7,935,Greek Capital Letter Chi,Χ
+U+03A8,936,Greek Capital Letter Psi,Ψ
+U+03A9,937,Greek Capital Letter Omega,Ω
+U+03AA,938,Greek Capital Letter Iota with diaeresis,Ϊ
+U+03AB,939,Greek Capital Letter Upsilon with diaeresis,Ϋ
+U+03AC,940,Greek Small Letter Alpha with acute accent,ά
+U+03AD,941,Greek Small Letter Epsilon with acute accent,έ
+U+03AE,942,Greek Small Letter Eta with acute accent,ή
+U+03AF,943,Greek Small Letter Iota with acute accent,ί
+U+03B0,944,Greek Small Letter Upsilon with diaeresis and acute accent,ΰ
+U+03B1,945,Greek Small Letter Alpha,α
+U+03B2,946,Greek Small Letter Beta,β
+U+03B3,947,Greek Small Letter Gamma,γ
+U+03B4,948,Greek Small Letter Delta,δ
+U+03B5,949,Greek Small Letter Epsilon,ε
+U+03B6,950,Greek Small Letter Zeta,ζ
+U+03B7,951,Greek Small Letter Eta,η
+U+03B8,952,Greek Small Letter Theta,θ
+U+03B9,953,Greek Small Letter Iota,ι
+U+03BA,954,Greek Small Letter Kappa,κ
+U+03BB,955,Greek Small Letter Lambda,λ
+U+03BC,956,Greek Small Letter Mu,μ
+U+03BD,957,Greek Small Letter Nu,ν
+U+03BE,958,Greek Small Letter Xi,ξ
+U+03BF,959,Greek Small Letter Omicron,ο
+U+03C0,960,Greek Small Letter Pi,π
+U+03C1,961,Greek Small Letter Rho,ρ
+U+03C2,962,Greek Small Letter Final Sigma,ς
+U+03C3,963,Greek Small Letter Sigma,σ
+U+03C4,964,Greek Small Letter Tau,τ
+U+03C5,965,Greek Small Letter Upsilon,υ
+U+03C6,966,Greek Small Letter Phi,φ
+U+03C7,967,Greek Small Letter Chi,χ
+U+03C8,968,Greek Small Letter Psi,ψ
+U+03C9,969,Greek Small Letter Omega,ω
+U+03CA,970,Greek Small Letter Iota with diaeresis,ϊ
+U+03CB,971,Greek Small Letter Upsilon with diaeresis,ϋ
+U+03CC,972,Greek Small Letter Omicron with acute accent,ό
+U+03CD,973,Greek Small Letter Upsilon with acute accent,ύ
+U+03CE,974,Greek Small Letter Omega with acute accent,ώ
+U+03CF,975,Greek Capital Kai Symbol,Ϗ
+U+03D0,976,Greek Beta Symbol,ϐ
+U+03D1,977,Greek Theta Symbol,ϑ
+U+03D2,978,Greek Upsilon with hook Symbol,ϒ
+U+03D3,979,Greek Upsilon with acute and hook Symbol,ϓ
+U+03D4,980,Greek Upsilon with diaeresis and hook Symbol,ϔ
+U+03D5,981,Greek Phi Symbol,ϕ
+U+03D6,982,Greek Pi Symbol,ϖ
+U+03D7,983,Greek Kai Symbol,ϗ
+U+03D8,984,Greek Letter Qoppa,Ϙ
+U+03D9,985,Greek Small Letter Qoppa,ϙ
+U+03DA,986,Greek Letter Stigma,Ϛ
+U+03DB,987,Greek Small Letter Stigma,ϛ
+U+03DC,988,Greek Letter Digamma,Ϝ
+U+03DD,989,Greek Small Letter Digamma,ϝ
+U+03DE,990,Greek Letter Koppa,Ϟ
+U+03DF,991,Greek Small Letter Koppa,ϟ
+U+03E0,992,Greek Letter Sampi,Ϡ
+U+03E1,993,Greek Small Letter Sampi,ϡ
+U+03E2,994,Coptic Capital Letter Shei,Ϣ
+U+03E3,995,Coptic Small Letter Shei,ϣ
+U+03E4,996,Coptic Capital Letter Fei,Ϥ
+U+03E5,997,Coptic Small Letter Fei,ϥ
+U+03E6,998,Coptic Capital Letter Khei,Ϧ
+U+03E7,999,Coptic Small Letter Khei,ϧ
+U+03E8,1000,Coptic Capital Letter Hori,Ϩ
+U+03E9,1001,Coptic Small Letter Hori,ϩ
+U+03EA,1002,Coptic Capital Letter Gangia,Ϫ
+U+03EB,1003,Coptic Small Letter Gangia,ϫ
+U+03EC,1004,Coptic Capital Letter Shima,Ϭ
+U+03ED,1005,Coptic Small Letter Shima,ϭ
+U+03EE,1006,Coptic Capital Letter Dei,Ϯ
+U+03EF,1007,Coptic Small Letter Dei,ϯ
+U+03F0,1008,Greek Kappa Symbol,ϰ
+U+03F1,1009,Greek Rho Symbol,ϱ
+U+03F2,1010,Greek Lunate Sigma Symbol,ϲ
+U+03F3,1011,Greek Letter Yot,ϳ
+U+03F4,1012,Greek Capital Theta Symbol,ϴ
+U+03F5,1013,Greek Lunate Epsilon Symbol,ϵ
+U+03F6,1014,Greek Reversed Lunate Epsilon Symbol,϶
+U+03F7,1015,Greek Capital Sho,Ϸ
+U+03F8,1016,Greek Small Letter Sho,ϸ
+U+03F9,1017,Greek Capital Lunate Sigma Symbol,Ϲ
+U+03FA,1018,Greek Capital San,Ϻ
+U+03FB,1019,Greek Small Letter San,ϻ
+U+03FC,1020,Greek Rho with stroke Symbol,ϼ
+U+03FD,1021,Greek Capital Reversed Lunate Sigma Symbol,Ͻ
+U+03FE,1022,Greek Capital Dotted Lunate Sigma Symbol,Ͼ
+U+03FF,1023,Greek Capital Reversed Dotted Lunate Sigma Symbol,Ͽ
+U+0400,NaN,Cyrillic Capital Letter Ie with grave,Ѐ
+U+0401,NaN,Cyrillic Capital Letter Io,Ё
+U+0402,NaN,Cyrillic Capital Letter Dje,Ђ
+U+0403,NaN,Cyrillic Capital Letter Gje,Ѓ
+U+0404,NaN,Cyrillic Capital Letter Ukrainian Ie,Є
+U+0405,NaN,Cyrillic Capital Letter Dze,Ѕ
+U+0406,NaN,Cyrillic Capital Letter Byelorussian-Ukrainian I,І
+U+0407,NaN,Cyrillic Capital Letter Yi,Ї
+U+0408,NaN,Cyrillic Capital Letter Je,Ј
+U+0409,NaN,Cyrillic Capital Letter Lje,Љ
+U+040A,NaN,Cyrillic Capital Letter Nje,Њ
+U+040B,NaN,Cyrillic Capital Letter Tshe,Ћ
+U+040C,NaN,Cyrillic Capital Letter Kje,Ќ
+U+040D,NaN,Cyrillic Capital Letter I with grave,Ѝ
+U+040E,NaN,Cyrillic Capital Letter Short U,Ў
+U+040F,NaN,Cyrillic Capital Letter Dzhe,Џ
+U+0410,NaN,Cyrillic Capital Letter A,А
+U+0411,NaN,Cyrillic Capital Letter Be,Б
+U+0412,NaN,Cyrillic Capital Letter Ve,В
+U+0413,NaN,Cyrillic Capital Letter Ghe,Г
+U+0414,NaN,Cyrillic Capital Letter De,Д
+U+0415,NaN,Cyrillic Capital Letter Ie,Е
+U+0416,NaN,Cyrillic Capital Letter Zhe,Ж
+U+0417,NaN,Cyrillic Capital Letter Ze,З
+U+0418,NaN,Cyrillic Capital Letter I,И
+U+0419,NaN,Cyrillic Capital Letter Short I,Й
+U+041A,NaN,Cyrillic Capital Letter Ka,К
+U+041B,NaN,Cyrillic Capital Letter El,Л
+U+041C,NaN,Cyrillic Capital Letter Em,М
+U+041D,NaN,Cyrillic Capital Letter En,Н
+U+041E,NaN,Cyrillic Capital Letter O,О
+U+041F,NaN,Cyrillic Capital Letter Pe,П
+U+0420,NaN,Cyrillic Capital Letter Er,Р
+U+0421,NaN,Cyrillic Capital Letter Es,С
+U+0422,NaN,Cyrillic Capital Letter Te,Т
+U+0423,NaN,Cyrillic Capital Letter U,У
+U+0424,NaN,Cyrillic Capital Letter Ef,Ф
+U+0425,NaN,Cyrillic Capital Letter Ha,Х
+U+0426,NaN,Cyrillic Capital Letter Tse,Ц
+U+0427,NaN,Cyrillic Capital Letter Che,Ч
+U+0428,NaN,Cyrillic Capital Letter Sha,Ш
+U+0429,NaN,Cyrillic Capital Letter Shcha,Щ
+U+042A,NaN,Cyrillic Capital Letter Hard Sign,Ъ
+U+042B,NaN,Cyrillic Capital Letter Yeru,Ы
+U+042C,NaN,Cyrillic Capital Letter Soft Sign,Ь
+U+042D,NaN,Cyrillic Capital Letter E,Э
+U+042E,NaN,Cyrillic Capital Letter Yu,Ю
+U+042F,NaN,Cyrillic Capital Letter Ya,Я
+U+0430,NaN,Cyrillic Small Letter A,а
+U+0431,NaN,Cyrillic Small Letter Be,б
+U+0432,NaN,Cyrillic Small Letter Ve,в
+U+0433,NaN,Cyrillic Small Letter Ghe,г
+U+0434,NaN,Cyrillic Small Letter De,д
+U+0435,NaN,Cyrillic Small Letter Ie,е
+U+0436,NaN,Cyrillic Small Letter Zhe,ж
+U+0437,NaN,Cyrillic Small Letter Ze,з
+U+0438,NaN,Cyrillic Small Letter I,и
+U+0439,NaN,Cyrillic Small Letter Short I,й
+U+043A,NaN,Cyrillic Small Letter Ka,к
+U+043B,NaN,Cyrillic Small Letter El,л
+U+043C,NaN,Cyrillic Small Letter Em,м
+U+043D,NaN,Cyrillic Small Letter En,н
+U+043E,NaN,Cyrillic Small Letter O,о
+U+043F,NaN,Cyrillic Small Letter Pe,п
+U+0440,NaN,Cyrillic Small Letter Er,р
+U+0441,NaN,Cyrillic Small Letter Es,с
+U+0442,NaN,Cyrillic Small Letter Te,т
+U+0443,NaN,Cyrillic Small Letter U,у
+U+0444,NaN,Cyrillic Small Letter Ef,ф
+U+0445,NaN,Cyrillic Small Letter Ha,х
+U+0446,NaN,Cyrillic Small Letter Tse,ц
+U+0447,NaN,Cyrillic Small Letter Che,ч
+U+0448,NaN,Cyrillic Small Letter Sha,ш
+U+0449,NaN,Cyrillic Small Letter Shcha,щ
+U+044A,NaN,Cyrillic Small Letter Hard Sign,ъ
+U+044B,NaN,Cyrillic Small Letter Yeru,ы
+U+044C,NaN,Cyrillic Small Letter Soft Sign,ь
+U+044D,NaN,Cyrillic Small Letter E,э
+U+044E,NaN,Cyrillic Small Letter Yu,ю
+U+044F,NaN,Cyrillic Small Letter Ya,я
+U+0450,NaN,Cyrillic Small Letter Ie with grave,ѐ
+U+0451,NaN,Cyrillic Small Letter Io,ё
+U+0452,NaN,Cyrillic Small Letter Dje,ђ
+U+0453,NaN,Cyrillic Small Letter Gje,ѓ
+U+0454,NaN,Cyrillic Small Letter Ukrainian Ie,є
+U+0455,NaN,Cyrillic Small Letter Dze,ѕ
+U+0456,NaN,Cyrillic Small Letter Byelorussian-Ukrainian I,і
+U+0457,NaN,Cyrillic Small Letter Yi,ї
+U+0458,NaN,Cyrillic Small Letter Je,ј
+U+0459,NaN,Cyrillic Small Letter Lje,љ
+U+045A,NaN,Cyrillic Small Letter Nje,њ
+U+045B,NaN,Cyrillic Small Letter Tshe,ћ
+U+045C,NaN,Cyrillic Small Letter Kje,ќ
+U+045D,NaN,Cyrillic Small Letter I with grave,ѝ
+U+045E,NaN,Cyrillic Small Letter Short U,ў
+U+045F,NaN,Cyrillic Small Letter Dzhe,џ
+U+0460,NaN,Cyrillic Capital Letter Omega,Ѡ
+U+0461,NaN,Cyrillic Small Letter Omega,ѡ
+U+0462,NaN,Cyrillic Capital Letter Yat,Ѣ
+U+0463,NaN,Cyrillic Small Letter Yat,ѣ
+U+0464,NaN,Cyrillic Capital Letter Iotified E,Ѥ
+U+0465,NaN,Cyrillic Small Letter Iotified E,ѥ
+U+0466,NaN,Cyrillic Capital Letter Little Yus,Ѧ
+U+0467,NaN,Cyrillic Small Letter Little Yus,ѧ
+U+0468,NaN,Cyrillic Capital Letter Iotified Little Yus,Ѩ
+U+0469,NaN,Cyrillic Small Letter Iotified Little Yus,ѩ
+U+046A,NaN,Cyrillic Capital Letter Big Yus,Ѫ
+U+046B,NaN,Cyrillic Small Letter Big Yus,ѫ
+U+046C,NaN,Cyrillic Capital Letter Iotified Big Yus,Ѭ
+U+046D,NaN,Cyrillic Small Letter Iotified Big Yus,ѭ
+U+046E,NaN,Cyrillic Capital Letter Ksi,Ѯ
+U+046F,NaN,Cyrillic Small Letter Ksi,ѯ
+U+0470,NaN,Cyrillic Capital Letter Psi,Ѱ
+U+0471,NaN,Cyrillic Small Letter Psi,ѱ
+U+0472,NaN,Cyrillic Capital Letter Fita,Ѳ
+U+0473,NaN,Cyrillic Small Letter Fita,ѳ
+U+0474,NaN,Cyrillic Capital Letter Izhitsa,Ѵ
+U+0475,NaN,Cyrillic Small Letter Izhitsa,ѵ
+U+0476,NaN,Cyrillic Capital Letter Izhitsa with double grave accent,Ѷ
+U+0477,NaN,Cyrillic Small Letter Izhitsa with double grave accent,ѷ
+U+0478,NaN,Cyrillic Capital Letter Uk,Ѹ
+U+0479,NaN,Cyrillic Small Letter Uk,ѹ
+U+047A,NaN,Cyrillic Capital Letter Round Omega,Ѻ
+U+047B,NaN,Cyrillic Small Letter Round Omega,ѻ
+U+047C,NaN,Cyrillic Capital Letter Omega with Titlo,Ѽ
+U+047D,NaN,Cyrillic Small Letter Omega with Titlo,ѽ
+U+047E,NaN,Cyrillic Capital Letter Ot,Ѿ
+U+047F,NaN,Cyrillic Small Letter Ot,ѿ
+U+0480,NaN,Cyrillic Capital Letter Koppa,Ҁ
+U+0481,NaN,Cyrillic Small Letter Koppa,ҁ
+U+0482,NaN,Cyrillic Thousands Sign,҂
+U+0483,NaN,Combining Cyrillic Titlo,҃
+U+0484,NaN,Combining Cyrillic Palatalization,҄
+U+0485,NaN,Combining Cyrillic Dasia Pneumata,҅
+U+0486,NaN,Combining Cyrillic Psili Pneumata,҆
+U+0487,NaN,Combining Cyrillic Pokrytie,҇
+U+0488,NaN,Combining Cyrillic Hundred Thousands Sign,҈
+U+0489,NaN,Combining Cyrillic Millions Sign,҉
+U+048A,NaN,Cyrillic Capital Letter Short I with tail,Ҋ
+U+048B,NaN,Cyrillic Small Letter Short I with tail,ҋ
+U+048C,NaN,Cyrillic Capital Letter Semisoft Sign,Ҍ
+U+048D,NaN,Cyrillic Small Letter Semisoft Sign,ҍ
+U+048E,NaN,Cyrillic Capital Letter Er with tick,Ҏ
+U+048F,NaN,Cyrillic Small Letter Er with tick,ҏ
+U+0490,NaN,Cyrillic Capital Letter Ghe with upturn,Ґ
+U+0491,NaN,Cyrillic Small Letter Ghe with upturn,ґ
+U+0492,NaN,Cyrillic Capital Letter Ghe with stroke,Ғ
+U+0493,NaN,Cyrillic Small Letter Ghe with stroke,ғ
+U+0494,NaN,Cyrillic Capital Letter Ghe with middle hook,Ҕ
+U+0495,NaN,Cyrillic Small Letter Ghe with middle hook,ҕ
+U+0496,NaN,Cyrillic Capital Letter Zhe with descender,Җ
+U+0497,NaN,Cyrillic Small Letter Zhe with descender,җ
+U+0498,NaN,Cyrillic Capital Letter Ze with descender,Ҙ
+U+0499,NaN,Cyrillic Small Letter Ze with descender,ҙ
+U+049A,NaN,Cyrillic Capital Letter Ka with descender,Қ
+U+049B,NaN,Cyrillic Small Letter Ka with descender,қ
+U+049C,NaN,Cyrillic Capital Letter Ka with vertical stroke,Ҝ
+U+049D,NaN,Cyrillic Small Letter Ka with vertical stroke,ҝ
+U+049E,NaN,Cyrillic Capital Letter Ka with stroke,Ҟ
+U+049F,NaN,Cyrillic Small Letter Ka with stroke,ҟ
+U+04A0,NaN,Cyrillic Capital Letter Bashkir Ka,Ҡ
+U+04A1,NaN,Cyrillic Small Letter Bashkir Ka,ҡ
+U+04A2,NaN,Cyrillic Capital Letter En with descender,Ң
+U+04A3,NaN,Cyrillic Small Letter En with descender,ң
+U+04A4,NaN,Cyrillic Capital Ligature En Ghe,Ҥ
+U+04A5,NaN,Cyrillic Small Ligature En Ghe,ҥ
+U+04A6,NaN,Cyrillic Capital Letter Pe with middle hook,Ҧ
+U+04A7,NaN,Cyrillic Small Letter Pe with middle hook,ҧ
+U+04A8,NaN,Cyrillic Capital Letter Abkhazian Ha,Ҩ
+U+04A9,NaN,Cyrillic Small Letter Abkhazian Ha,ҩ
+U+04AA,NaN,Cyrillic Capital Letter Es with descender,Ҫ
+U+04AB,NaN,Cyrillic Small Letter Es with descender,ҫ
+U+04AC,NaN,Cyrillic Capital Letter Te with descender,Ҭ
+U+04AD,NaN,Cyrillic Small Letter Te with descender,ҭ
+U+04AE,NaN,Cyrillic Capital Letter Straight U,Ү
+U+04AF,NaN,Cyrillic Small Letter Straight U,ү
+U+04B0,NaN,Cyrillic Capital Letter Straight U with stroke,Ұ
+U+04B1,NaN,Cyrillic Small Letter Straight U with stroke,ұ
+U+04B2,NaN,Cyrillic Capital Letter Ha with descender,Ҳ
+U+04B3,NaN,Cyrillic Small Letter Ha with descender,ҳ
+U+04B4,NaN,Cyrillic Capital Ligature Te Tse,Ҵ
+U+04B5,NaN,Cyrillic Small Ligature Te Tse,ҵ
+U+04B6,NaN,Cyrillic Capital Letter Che with descender,Ҷ
+U+04B7,NaN,Cyrillic Small Letter Che with descender,ҷ
+U+04B8,NaN,Cyrillic Capital Letter Che with vertical stroke,Ҹ
+U+04B9,NaN,Cyrillic Small Letter Che with vertical stroke,ҹ
+U+04BA,NaN,Cyrillic Capital Letter Shha,Һ
+U+04BB,NaN,Cyrillic Small Letter Shha,һ
+U+04BC,NaN,Cyrillic Capital Letter Abkhazian Che,Ҽ
+U+04BD,NaN,Cyrillic Small Letter Abkhazian Che,ҽ
+U+04BE,NaN,Cyrillic Capital Letter Abkhazian Che with descender,Ҿ
+U+04BF,NaN,Cyrillic Small Letter Abkhazian Che with descender,ҿ
+U+04C0,NaN,Cyrillic Letter Palochka,Ӏ
+U+04C1,NaN,Cyrillic Capital Letter Zhe with breve,Ӂ
+U+04C2,NaN,Cyrillic Small Letter Zhe with breve,ӂ
+U+04C3,NaN,Cyrillic Capital Letter Ka with hook,Ӄ
+U+04C4,NaN,Cyrillic Small Letter Ka with hook,ӄ
+U+04C5,NaN,Cyrillic Capital Letter El with tail,Ӆ
+U+04C6,NaN,Cyrillic Small Letter El with tail,ӆ
+U+04C7,NaN,Cyrillic Capital Letter En with hook,Ӈ
+U+04C8,NaN,Cyrillic Small Letter En with hook,ӈ
+U+04C9,NaN,Cyrillic Capital Letter En with tail,Ӊ
+U+04CA,NaN,Cyrillic Small Letter En with tail,ӊ
+U+04CB,NaN,Cyrillic Capital Letter Khakassian Che,Ӌ
+U+04CC,NaN,Cyrillic Small Letter Khakassian Che,ӌ
+U+04CD,NaN,Cyrillic Capital Letter Em with tail,Ӎ
+U+04CE,NaN,Cyrillic Small Letter Em with tail,ӎ
+U+04CF,NaN,Cyrillic Small Letter Palochka,ӏ
+U+04D0,NaN,Cyrillic Capital Letter A with breve,Ӑ
+U+04D1,NaN,Cyrillic Small Letter A with breve,ӑ
+U+04D2,NaN,Cyrillic Capital Letter A with diaeresis,Ӓ
+U+04D3,NaN,Cyrillic Small Letter A with diaeresis,ӓ
+U+04D4,NaN,Cyrillic Capital Ligature A Ie,Ӕ
+U+04D5,NaN,Cyrillic Small Ligature A Ie,ӕ
+U+04D6,NaN,Cyrillic Capital Letter Ie with breve,Ӗ
+U+04D7,NaN,Cyrillic Small Letter Ie with breve,ӗ
+U+04D8,NaN,Cyrillic Capital Letter Schwa,Ә
+U+04D9,NaN,Cyrillic Small Letter Schwa,ә
+U+04DA,NaN,Cyrillic Capital Letter Schwa with diaeresis,Ӛ
+U+04DB,NaN,Cyrillic Small Letter Schwa with diaeresis,ӛ
+U+04DC,NaN,Cyrillic Capital Letter Zhe with diaeresis,Ӝ
+U+04DD,NaN,Cyrillic Small Letter Zhe with diaeresis,ӝ
+U+04DE,NaN,Cyrillic Capital Letter Ze with diaeresis,Ӟ
+U+04DF,NaN,Cyrillic Small Letter Ze with diaeresis,ӟ
+U+04E0,NaN,Cyrillic Capital Letter Abkhazian Dze,Ӡ
+U+04E1,NaN,Cyrillic Small Letter Abkhazian Dze,ӡ
+U+04E2,NaN,Cyrillic Capital Letter I with macron,Ӣ
+U+04E3,NaN,Cyrillic Small Letter I with macron,ӣ
+U+04E4,NaN,Cyrillic Capital Letter I with diaeresis,Ӥ
+U+04E5,NaN,Cyrillic Small Letter I with diaeresis,ӥ
+U+04E6,NaN,Cyrillic Capital Letter O with diaeresis,Ӧ
+U+04E7,NaN,Cyrillic Small Letter O with diaeresis,ӧ
+U+04E8,NaN,Cyrillic Capital Letter Barred O,Ө
+U+04E9,NaN,Cyrillic Small Letter Barred O,ө
+U+04EA,NaN,Cyrillic Capital Letter Barred O with diaeresis,Ӫ
+U+04EB,NaN,Cyrillic Small Letter Barred O with diaeresis,ӫ
+U+04EC,NaN,Cyrillic Capital Letter E with diaeresis,Ӭ
+U+04ED,NaN,Cyrillic Small Letter E with diaeresis,ӭ
+U+04EE,NaN,Cyrillic Capital Letter U with macron,Ӯ
+U+04EF,NaN,Cyrillic Small Letter U with macron,ӯ
+U+04F0,NaN,Cyrillic Capital Letter U with diaeresis,Ӱ
+U+04F1,NaN,Cyrillic Small Letter U with diaeresis,ӱ
+U+04F2,NaN,Cyrillic Capital Letter U with double acute,Ӳ
+U+04F3,NaN,Cyrillic Small Letter U with double acute,ӳ
+U+04F4,NaN,Cyrillic Capital Letter Che with diaeresis,Ӵ
+U+04F5,NaN,Cyrillic Small Letter Che with diaeresis,ӵ
+U+04F6,NaN,Cyrillic Capital Letter Ghe with descender,Ӷ
+U+04F7,NaN,Cyrillic Small Letter Ghe with descender,ӷ
+U+04F8,NaN,Cyrillic Capital Letter Yeru with diaeresis,Ӹ
+U+04F9,NaN,Cyrillic Small Letter Yeru with diaeresis,ӹ
+U+04FA,NaN,Cyrillic Capital Letter Ghe with stroke and hook,Ӻ
+U+04FB,NaN,Cyrillic Small Letter Ghe with stroke and hook,ӻ
+U+04FC,NaN,Cyrillic Capital Letter Ha with hook,Ӽ
+U+04FD,NaN,Cyrillic Small Letter Ha with hook,ӽ
+U+04FE,NaN,Cyrillic Capital Letter Ha with stroke,Ӿ
+U+04FF,NaN,Cyrillic Small Letter Ha with stroke,ӿ
+U+2013,NaN,En dash,–
+U+2014,NaN,Em dash,—
+U+2015,NaN,Horizontal bar,―
+U+2017,NaN,Double low line,‗
+U+2018,NaN,Left single quotation mark,‘
+U+2019,NaN,Right single quotation mark,’
+U+201A,NaN,Single low-9 quotation mark,‚
+U+201B,NaN,Single high-reversed-9 quotation mark,‛
+U+201C,NaN,Left double quotation mark,“
+U+201D,NaN,Right double quotation mark,”
+U+201E,NaN,Double low-9 quotation mark,„
+U+2020,NaN,Dagger,†
+U+2021,NaN,Double dagger,‡
+U+2022,NaN,Bullet,•
+U+2026,NaN,Horizontal ellipsis,…
+U+2030,NaN,Per mille sign,‰
+U+2032,NaN,Prime,′
+U+2033,NaN,Double prime,″
+U+2039,NaN,Single left-pointing angle quotation mark,‹
+U+203A,NaN,Single right-pointing angle quotation mark,›
+U+203C,NaN,Double exclamation mark,‼
+U+203E,NaN,Overline,‾
+U+2044,NaN,Fraction slash,⁄
+U+204A,NaN,Tironian et sign,⁊
+U+2580,NaN,Upper half block,▀
+U+2581,NaN,Lower one eighth block,▁
+U+2582,NaN,Lower one quarter block,▂
+U+2583,NaN,Lower three eighths block,▃
+U+2584,NaN,Lower half block,▄
+U+2585,NaN,Lower five eighths block,▅
+U+2586,NaN,Lower three quarters block,▆
+U+2587,NaN,Lower seven eighths block,▇
+U+2588,NaN,Full block,█
+U+2589,NaN,Left seven eighths block,▉
+U+258A,NaN,Left three quarters block,▊
+U+258B,NaN,Left five eighths block,▋
+U+258C,NaN,Left half block,▌
+U+258D,NaN,Left three eighths block,▍
+U+258E,NaN,Left one quarter block,▎
+U+258F,NaN,Left one eighth block,▏
+U+2590,NaN,Right half block,▐
+U+2591,NaN,Light shade,░
+U+2592,NaN,Medium shade,▒
+U+2593,NaN,Dark shade,▓
+U+2594,NaN,Upper one eighth block,▔
+U+2595,NaN,Right one eighth block,▕
+U+2596,NaN,Quadrant lower left,▖
+U+2597,NaN,Quadrant lower right,▗
+U+2598,NaN,Quadrant upper left,▘
+U+2599,NaN,Quadrant upper left and lower left and lower right,▙
+U+259A,NaN,Quadrant upper left and lower right,▚
+U+259B,NaN,Quadrant upper left and upper right and lower left,▛
+U+259C,NaN,Quadrant upper left and upper right and lower right,▜
+U+259D,NaN,Quadrant upper right,▝
+U+259E,NaN,Quadrant upper right and lower left,▞
+U+259F,NaN,Quadrant upper right and lower left and lower right,▟
+U+25A0,NaN,Black square,■
+U+25A1,NaN,White square,□
+U+25A2,NaN,White square with rounded corners,▢
+U+25A3,NaN,White square containing small black square,▣
+U+25A4,NaN,Square with horizontal fill,▤
+U+25A5,NaN,Square with vertical fill,▥
+U+25A6,NaN,Square with orthogonal crosshatch fill,▦
+U+25A7,NaN,Square with upper left to lower right fill,▧
+U+25A8,NaN,Square with upper right to lower left fill,▨
+U+25A9,NaN,Square with diagonal crosshatch fill,▩
+U+25AA,NaN,Black small square,▪
+U+25AB,NaN,White small square,▫
+U+25AC,NaN,Black rectangle,▬
+U+25AD,NaN,White rectangle,▭
+U+25AE,NaN,Black vertical rectangle,▮
+U+25AF,NaN,White vertical rectangle,▯
+U+25B0,NaN,Black parallelogram,▰
+U+25B1,NaN,White parallelogram,▱
+U+25B2,NaN,Black up-pointing triangle,▲
+U+25B3,NaN,White up-pointing triangle,△
+U+25B4,NaN,Black up-pointing small triangle,▴
+U+25B5,NaN,White up-pointing small triangle,▵
+U+25B6,NaN,Black right-pointing triangle,▶
+U+25B7,NaN,White right-pointing triangle,▷
+U+25B8,NaN,Black right-pointing small triangle,▸
+U+25B9,NaN,White right-pointing small triangle,▹
+U+25BA,NaN,Black right-pointing pointer,►
+U+25BB,NaN,White right-pointing pointer,▻
+U+25BC,NaN,Black down-pointing triangle,▼
+U+25BD,NaN,White down-pointing triangle,▽
+U+25BE,NaN,Black down-pointing small triangle,▾
+U+25BF,NaN,White down-pointing small triangle,▿
+U+25C0,NaN,Black left-pointing triangle,◀
+U+25C1,NaN,White left-pointing triangle,◁
+U+25C2,NaN,Black left-pointing small triangle,◂
+U+25C3,NaN,White left-pointing small triangle,◃
+U+25C4,NaN,Black left-pointing pointer,◄
+U+25C5,NaN,White left-pointing pointer,◅
+U+25C6,NaN,Black diamond,◆
+U+25C7,NaN,White diamond,◇
+U+25C8,NaN,White diamond containing small black diamond,◈
+U+25C9,NaN,Fisheye,◉
+U+25CA,NaN,Lozenge,◊
+U+25CB,NaN,White circle,○
+U+25CC,NaN,Dotted circle,◌
+U+25CD,NaN,Circle with vertical fill,◍
+U+25CE,NaN,Bullseye,◎
+U+25CF,NaN,Black circle,●
+U+25D0,NaN,Circle with left half black,◐
+U+25D1,NaN,Circle with right half black,◑
+U+25D2,NaN,Circle with lower half black,◒
+U+25D3,NaN,Circle with upper half black,◓
+U+25D4,NaN,Circle with upper right quadrant black,◔
+U+25D5,NaN,Circle with all but upper left quadrant black,◕
+U+25D6,NaN,Left half circle black,◖
+U+25D7,NaN,Right half black circle,◗
+U+25D8,NaN,Inverse bullet,◘
+U+25D9,NaN,Inverse white circle,◙
+U+25DA,NaN,Upper half inverse white circle,◚
+U+25DB,NaN,Lower half inverse white circle,◛
+U+25DC,NaN,Upper left quadrant circular arc,◜
+U+25DD,NaN,Upper right quadrant circular arc,◝
+U+25DE,NaN,Lower right quadrant circular arc,◞
+U+25DF,NaN,Lower left quadrant circular arc,◟
+U+25E0,NaN,Upper half circle,◠
+U+25E1,NaN,Lower half circle,◡
+U+25E2,NaN,Black lower right triangle,◢
+U+25E3,NaN,Black lower left triangle,◣
+U+25E4,NaN,Black upper left triangle,◤
+U+25E5,NaN,Black upper right triangle,◥
+U+25E6,NaN,White bullet,◦
+U+25E7,NaN,Square with left half black,◧
+U+25E8,NaN,Square with right half black,◨
+U+25E9,NaN,Square with upper left diagonal half black,◩
+U+25EA,NaN,Square with lower right diagonal half black,◪
+U+25EB,NaN,White square with vertical bisecting line,◫
+U+25EC,NaN,White up-pointing triangle with dot,◬
+U+25ED,NaN,Up-pointing triangle with left half black,◭
+U+25EE,NaN,Up-pointing triangle with right half black,◮
+U+25EF,NaN,Large circle,◯
+U+25F0,NaN,White square with upper left quadrant,◰
+U+25F1,NaN,White square with lower left quadrant,◱
+U+25F2,NaN,White square with lower right quadrant,◲
+U+25F3,NaN,White square with upper right quadrant,◳
+U+25F4,NaN,White circle with upper left quadrant,◴
+U+25F5,NaN,White circle with lower left quadrant,◵
+U+25F6,NaN,White circle with lower right quadrant,◶
+U+25F7,NaN,White circle with upper right quadrant,◷
+U+25F8,NaN,Upper left triangle,◸
+U+25F9,NaN,Upper right triangle,◹
+U+25FA,NaN,Lower-left triangle,◺
+U+25FB,NaN,White medium square,◻
+U+25FC,NaN,Black medium square,◼
+U+25FD,NaN,White medium small square,◽
+U+25FE,NaN,Black medium small square,◾
+U+25FF,NaN,Lower right triangle,◿
+Code,NaN,Description,Result
+U+2700,NaN,Black safety scissors,✀
+U+2701,NaN,Upper blade scissors,✁
+U+2702,NaN,Black scissors,✂
+U+2703,NaN,Lower blade scissors,✃
+U+2704,NaN,White scissors,✄
+U+2705,NaN,White heavy check mark,✅
+U+2706,NaN,Telephone location sign,✆
+U+2707,NaN,Tape drive,✇
+U+2708,NaN,Airplane,✈
+U+2709,NaN,Envelope,✉
+U+270A,NaN,Raised fist,✊
+U+270B,NaN,Raised hand,✋
+U+270C,NaN,Victory hand,✌
+U+270D,NaN,Writing hand,✍
+U+270E,NaN,Lower right pencil,✎
+U+270F,NaN,Pencil,✏
+U+2710,NaN,Upper right pencil,✐
+U+2711,NaN,White nib,✑
+U+2712,NaN,Black nib,✒
+U+2713,NaN,Check mark,✓
+U+2714,NaN,Heavy check mark,✔
+U+2715,NaN,Multiplication X,✕
+U+2716,NaN,Heavy multiplication X,✖
+U+2717,NaN,Ballot X,✗
+U+2718,NaN,Heavy ballot X,✘
+U+2719,NaN,Outlined Greek cross,✙
+U+271A,NaN,Heavy Greek cross,✚
+U+271B,NaN,Open center cross,✛
+U+271C,NaN,Heavy open center cross,✜
+U+271D,NaN,Latin cross,✝
+U+271E,NaN,Shadowed white Latin cross,✞
+U+271F,NaN,Outlined Latin cross,✟
+U+2720,NaN,Maltese cross,✠
+U+2721,NaN,Star of David,✡
+U+2722,NaN,Four teardrop-spoked asterisk,✢
+U+2723,NaN,Four balloon-spoked asterisk,✣
+U+2724,NaN,Heavy four balloon-spoked asterisk,✤
+U+2725,NaN,Four club-spoked asterisk,✥
+U+2726,NaN,Black four-pointed star,✦
+U+2727,NaN,White four-pointed star,✧
+U+2728,NaN,Sparkles,✨
+U+2729,NaN,Stress outlined white star,✩
+U+272A,NaN,Circled white star,✪
+U+272B,NaN,Open center black star,✫
+U+272C,NaN,Black center white star,✬
+U+272D,NaN,Outlined black star,✭
+U+272E,NaN,Heavy outlined black star,✮
+U+272F,NaN,Pinwheel star,✯
+U+2730,NaN,Shadowed white star,✰
+U+2731,NaN,Heavy asterisk,✱
+U+2732,NaN,Open center asterisk,✲
+U+2733,NaN,Eight spoked asterisk,✳
+U+2734,NaN,Eight pointed black star,✴
+U+2735,NaN,Eight pointed pinwheel star,✵
+U+2736,NaN,Six pointed black star,✶
+U+2737,NaN,Eight pointed rectilinear black star,✷
+U+2738,NaN,Heavy eight pointed rectilinear black star,✸
+U+2739,NaN,Twelve pointed black star,✹
+U+273A,NaN,Sixteen pointed asterisk,✺
+U+273B,NaN,Teardrop spoked asterisk,✻
+U+273C,NaN,Open center teardrop spoked asterisk,✼
+U+273D,NaN,Heavy teardrop spoked asterisk,✽
+U+273E,NaN,Six petalled black and white florette,✾
+U+273F,NaN,Black florette,✿
+U+2740,NaN,White florette,❀
+U+2741,NaN,Eight petalled outlined black florette,❁
+U+2742,NaN,Circled open center eight pointed star,❂
+U+2743,NaN,Heavy teardrop spoked pinwheel asterisk,❃
+U+2744,NaN,Snowflake,❄
+U+2745,NaN,Tight trifoliate snowflake,❅
+U+2746,NaN,Heavy chevron snowflake,❆
+U+2747,NaN,Sparkle,❇
+U+2748,NaN,Heavy sparkle,❈
+U+2749,NaN,Balloon spoked asterisk,❉
+U+274A,NaN,Eight teardrop spoked propeller asterisk,❊
+U+274B,NaN,Heavy eight teardrop spoked propeller asterisk,❋
+U+274C,NaN,Cross mark,❌
+U+274D,NaN,Shadowed white circle,❍
+U+274E,NaN,Negative squared cross mark,❎
+U+274F,NaN,Lower right drop-shadowed white square,❏
+U+2750,NaN,Upper right drop-shadowed white square,❐
+U+2751,NaN,Lower right shadowed white square,❑
+U+2752,NaN,Upper right shadowed white square,❒
+U+2753,NaN,Black question mark ornament,❓
+U+2754,NaN,White question mark ornament,❔
+U+2755,NaN,White exclamation mark ornament,❕
+U+2756,NaN,Black diamond minus white X,❖
+U+2757,NaN,Heavy exclamation mark symbol,❗
+U+2758,NaN,Light vertical bar,❘
+U+2759,NaN,Medium vertical bar,❙
+U+275A,NaN,Heavy vertical bar,❚
+U+275B,NaN,Heavy single turned comma quotation mark ornament,❛
+U+275C,NaN,Heavy single comma quotation mark ornament,❜
+U+275D,NaN,Heavy double turned comma quotation mark ornament,❝
+U+275E,NaN,Heavy double comma quotation mark ornament,❞
+U+275F,NaN,Heavy low single comma quotation mark ornament,❜
+U+2760,NaN,Heavy low double comma quotation mark ornament,❞
+U+2761,NaN,Curved stem paragraph sign ornament,❡
+U+2762,NaN,Heavy exclamation mark ornament,❢
+U+2763,NaN,Heavy heart exclamation mark ornament,❣
+U+2764,NaN,Heavy black heart,❤
+U+2765,NaN,Rotated heavy black heart bullet,❥
+U+2766,NaN,Floral heart,❦
+U+2767,NaN,Rotated floral heart bullet,❧
+U+2768,NaN,Medium left parenthesis ornament,❨
+U+2769,NaN,Medium right parenthesis ornament,❩
+U+276A,NaN,Medium flattened left parenthesis ornament,❪
+U+276B,NaN,Medium flattened right parenthesis ornament,❫
+U+276C,NaN,Medium left-pointing angle bracket ornament,❬
+U+276D,NaN,Medium right-pointing angle bracket ornament,❭
+U+276E,NaN,Heavy left-pointing angle quotation mark ornament,❮
+U+276F,NaN,Heavy right-pointing angle quotation mark ornament,❯
+U+2770,NaN,Heavy left-pointing angle bracket ornament,❰
+U+2771,NaN,Heavy right-pointing angle bracket ornament,❱
+U+2772,NaN,Light left tortoise shell bracket ornament,❲
+U+2773,NaN,Light right tortoise shell bracket ornament,❳
+U+2774,NaN,Medium left curly bracket ornament,❴
+U+2775,NaN,Medium right curly bracket ornament,❵
+U+2776,NaN,Dingbat negative circled digit one,❶
+U+2777,NaN,Dingbat negative circled digit two,❷
+U+2778,NaN,Dingbat negative circled digit three,❸
+U+2779,NaN,Dingbat negative circled digit four,❹
+U+277A,NaN,Dingbat negative circled digit five,❺
+U+277B,NaN,Dingbat negative circled digit six,❻
+U+277C,NaN,Dingbat negative circled digit seven,❼
+U+277D,NaN,Dingbat negative circled digit eight,❽
+U+277E,NaN,Dingbat negative circled digit nine,❾
+U+277F,NaN,Dingbat negative circled digit ten,❿
+U+2780,NaN,Dingbat circled sans-serif digit one,➀
+U+2781,NaN,Dingbat circled sans-serif digit two,➁
+U+2782,NaN,Dingbat circled sans-serif digit three,➂
+U+2783,NaN,Dingbat circled sans-serif digit four,➃
+U+2784,NaN,Dingbat circled sans-serif digit five,➄
+U+2785,NaN,Dingbat circled sans-serif digit six,➅
+U+2786,NaN,Dingbat circled sans-serif digit seven,➆
+U+2787,NaN,Dingbat circled sans-serif digit eight,➇
+U+2788,NaN,Dingbat circled sans-serif digit nine,➈
+U+2789,NaN,Dingbat circled sans-serif digit ten,➉
+U+278A,NaN,Dingbat negative circled sans-serif digit one,➊
+U+278B,NaN,Dingbat negative circled sans-serif digit two,➋
+U+278C,NaN,Dingbat negative circled sans-serif digit three,➌
+U+278D,NaN,Dingbat negative circled sans-serif digit four,➍
+U+278E,NaN,Dingbat negative circled sans-serif digit five,➎
+U+278F,NaN,Dingbat negative circled sans-serif digit six,➏
+U+2790,NaN,Dingbat negative circled sans-serif digit seven,➐
+U+2791,NaN,Dingbat negative circled sans-serif digit eight,➑
+U+2792,NaN,Dingbat negative circled sans-serif digit nine,➒
+U+2793,NaN,Dingbat negative circled sans-serif digit ten,➓
+U+2794,NaN,Heavy wide-headed rightward arrow,➔
+U+2795,NaN,Heavy plus sign,➕
+U+2796,NaN,Heavy minus sign,➖
+U+2797,NaN,Heavy division sign,➗
+U+2798,NaN,Heavy south east arrow,➘
+U+2799,NaN,Heavy rightward arrow,➙
+U+279A,NaN,Heavy north east arrow,➚
+U+279B,NaN,Drafting point rightward arrow,➛
+U+279C,NaN,Heavy round-tipped rightward arrow,➜
+U+279D,NaN,Triangle-headed rightward arrow,➝
+U+279E,NaN,Heavy triangle-headed rightward arrow,➞
+U+279F,NaN,Dashed triangle-headed rightward arrow,➟
+U+27A0,NaN,Heavy dashed triangle-headed rightward arrow,➠
+U+27A1,NaN,Black rightward arrow,➡
+U+27A2,NaN,Three-D top-lighted rightward arrowhead,➢
+U+27A3,NaN,Three-D bottom-lighted rightward arrowhead,➣
+U+27A4,NaN,Black rightward arrowhead,➤
+U+27A5,NaN,Heavy black curved downward and rightward arrow,➥
+U+27A6,NaN,Heavy black curved upward and rightward arrow,➦
+U+27A7,NaN,Squat black rightward arrow,➧
+U+27A8,NaN,Heavy concave-pointed black rightward arrow,➨
+U+27A9,NaN,Right-shaded white rightward arrow,➩
+U+27AA,NaN,Left-shaded white rightward arrow,➪
+U+27AB,NaN,Back-tilted shadowed white rightward arrow,➫
+U+27AC,NaN,Front-tilted shadowed white rightward arrow,➬
+U+27AD,NaN,Heavy lower right-shadowed white rightward arrow,➭
+U+27AE,NaN,Heavy upper right-shadowed white rightward arrow,➮
+U+27AF,NaN,Notched lower right-shadowed white rightward arrow,➯
+U+27B0,NaN,Curly loop,➰
+U+27B1,NaN,Notched upper right-shadowed white rightward arrow,➱
+U+27B2,NaN,Circled heavy white rightward arrow,➲
+U+27B3,NaN,White-feathered rightward arrow,➳
+U+27B4,NaN,Black-feathered south east arrow,➴
+U+27B5,NaN,Black-feathered rightward arrow,➵
+U+27B6,NaN,Black-feathered north east arrow,➶
+U+27B7,NaN,Heavy black-feathered south east arrow,➷
+U+27B8,NaN,Heavy black-feathered rightward arrow,➸
+U+27B9,NaN,Heavy black-feathered north east arrow,➹
+U+27BA,NaN,Teardrop-barbed rightward arrow,➺
+U+27BB,NaN,Heavy teardrop-shanked rightward arrow,➻
+U+27BC,NaN,Wedge-tailed rightward arrow,➼
+U+27BD,NaN,Heavy wedge-tailed rightward arrow,➽
+U+27BE,NaN,Open-outlined rightward arrow,➾
+U+27BF,NaN,Double curly loop,➿
